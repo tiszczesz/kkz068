@@ -1,0 +1,39 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Strona Index</h1>
+    <div>ds fsdfsd fsdf s fsdf sfsfs f</div>
+    @{
+        string firstname = "Adam";
+        string lastname = "Nowak";
+        var colors = new List<string>{"red","green","blue","yellow"};
+    }
+    <p>
+        @firstname @lastname Dzisiaj mamy: @DateTime.Now
+    </p>
+    <hr />
+    <ol>
+        @foreach(var color in colors){
+            <li>@color</li>
+        }
+    </ol>
+    <hr />
+    <select>
+         @foreach(var color in colors){
+            <option>@color</option>
+        }
+    </select>
+    @* <ol>
+        <li>sdfsdfsdf</li>
+        <li>sdfsdfsdf</li>
+        <li>sdfsdfsdf</li>
+    </ol> *@
+</body>
+</html>
