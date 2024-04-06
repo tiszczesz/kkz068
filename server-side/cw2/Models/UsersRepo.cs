@@ -24,4 +24,11 @@ public class UsersRepo
         }
         return users;
     }
+    public int GetLastIndex(){
+        return Users.Max(x => x.Id);
+    }
+    public void AddToFile(User u,string filename="dane.txt"){
+        string line = $"{GetLastIndex()+1};{u.Firstname};{u.Lastname};{u.Age}";
+        File.AppendAllText(filename, line+Environment.NewLine);
+    }
 }
