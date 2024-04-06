@@ -16,6 +16,9 @@ namespace MyApp.Namespace
             if(ModelState.IsValid){
                 //dodawanie do pliku MyUser
                 UsersRepo repo = new UsersRepo();
+                if(MyUser != null){
+                     repo.AddToFile(MyUser);
+                }               
                 return RedirectToPage("Index");
             }
             return Page();
