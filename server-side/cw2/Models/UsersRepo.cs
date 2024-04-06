@@ -5,7 +5,7 @@ public class UsersRepo
     public List<User> Users { get; set; }
     public UsersRepo()
     {
-
+        Users = getUsersFromFile("dane.txt");
     }
     private List<User> getUsersFromFile(string path)
     {
