@@ -1,0 +1,4 @@
+1;Anna;Wanna;34
+2;Monika;Małecki;22
+3;Roman;Urych;12
+4;Tomasz;Tymon;56

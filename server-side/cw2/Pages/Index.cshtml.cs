@@ -5,6 +5,7 @@ namespace MyApp.Namespace
 {
     public class IndexModel : PageModel
     {
+        
         public void OnGet()
         {
         }
