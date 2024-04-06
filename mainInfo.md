@@ -21,4 +21,9 @@ dotnet new mvc -o nazwa-katalogu aplikacja MVC
 W katalogu w którym jest Program.cs
 ```console
 dotnet run
+
+dotnet new page -n Page3 //tworzenie strony !! W katalogu Pages !!
+
+
 ```
+https://learn.microsoft.com/en-us/training/dotnet/
