@@ -17,3 +17,8 @@ dotnet new web -o Nazwa-katalogu // pusta aplikacja webowa
 dotnet new webapp -o nazwa-katalogu // aplikacja RazorPage
 dotnet new mvc -o nazwa-katalogu aplikacja MVC
 ```
+## Uruchamianie apliacji z dotnet
+W katalogu w którym jest Program.cs
+```console
+dotnet run
+```
