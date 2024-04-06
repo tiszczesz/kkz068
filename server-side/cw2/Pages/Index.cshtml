@@ -22,6 +22,7 @@
             <th>Imię</th>
             <th>Nazwisko</th>
             <th>Wiek</th>
+            <th></th>
             <!-- -->
         </tr>
         @{
@@ -35,6 +36,14 @@
                 <td>@u.Firstname</td>
                 <td>@u.Lastname</td>
                 <td>@u.Age</td>
+                <td>
+                    <a asp-page="Delete" asp-route-id="@u.Id">
+                        Usuwanie
+                    </a><br />
+                    <a asp-page="Update" asp-route-id="@u.Id">
+                        Zmiana danych
+                    </a>
+                </td>
             </tr>
         }
     </table>
