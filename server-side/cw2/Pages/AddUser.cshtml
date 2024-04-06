@@ -1,0 +1,39 @@
+﻿@page
+@model MyApp.Namespace.AddUserModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/site.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dodaj użytkownika</h1>
+    <form method="post">
+        <div class="line">
+            <label asp-for="@Model.MyUser.Firstname"></label>
+            <input asp-for="@Model.MyUser.Firstname" />
+            <span class="error" asp-validation-for="@Model.MyUser.Firstname"></span>
+        </div>
+        <div class="line">
+            <label asp-for="@Model.MyUser.Lastname"></label>
+            <input asp-for="@Model.MyUser.Lastname" />
+            <span class="error" asp-validation-for="@Model.MyUser.Lastname"></span>
+        </div>
+        <div class="line">
+            <label asp-for="@Model.MyUser.Age"></label>
+            <input asp-for="@Model.MyUser.Age" />
+            <span class="error" asp-validation-for="@Model.MyUser.Age"></span>
+        </div>
+        <div class="line">
+            <input type="submit" value="Zapisz">
+        </div>
+    </form>
+</body>
+
+</html>
