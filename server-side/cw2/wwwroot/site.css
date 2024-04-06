@@ -11,8 +11,9 @@ table{
 }
 td, th {
     padding: 10px;
-    border: solid 1px rgb(71, 55, 55);
+    border: solid 1px rgb(69, 52, 52);
 }
 th{
-    background-color: lightsalmon;    
+    background-color: lightsalmon; 
+    font-weight: bold;   
 }

@@ -14,7 +14,26 @@
     <h1>Moja strona INDEX</h1>
     <h3>Lista użytkowników</h3>
     <table>
-        
+        <tr>
+            <th>Lp</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+            <!-- -->
+        </tr>
+        @{
+            //Generowanie dynamiczne elementów User
+            int lp = 0;
+        }
+        @foreach(var u in Model.Users){
+            lp++;
+            <tr>
+                <td>@lp</td>
+                <td>@u.Firstname</td>
+                <td>@u.Lastname</td>
+                <td>@u.Age</td>
+            </tr>
+        }
     </table>
 </body>
 </html>
