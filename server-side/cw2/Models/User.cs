@@ -20,5 +20,8 @@ public class User
     [DisplayName("Podaj wiek")]
     [Required(ErrorMessage = "Podaj poprawny wiek")]   
     public int? Age { get; set; }
-    
+    override public string ToString(){
+        //serializacja czyli obiekt na string
+        return $"{Id};{Firstname};{Lastname};{Age}";
+    }
 }

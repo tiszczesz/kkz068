@@ -25,10 +25,24 @@ public class UsersRepo
         return users;
     }
     public int GetLastIndex(){
-        return Users.Max(x => x.Id);
+        return Users.Count>0 ? Users.Max(x => x.Id):0;
     }
     public void AddToFile(User u,string filename="dane.txt"){
         string line = $"{GetLastIndex()+1};{u.Firstname};{u.Lastname};{u.Age}";
         File.AppendAllText(filename, line+Environment.NewLine);
+    }
+    public void DeleteUser(int? id){
+        var UserToRemove = Users.FirstOrDefault(u=>u.Id == id);
+        if(UserToRemove != null){
+            Users.Remove(UserToRemove);
+            SaveToFile();
+        }        
+    }
+    public void SaveToFile(){
+        List<string> lines = new List<string>();
+        foreach(var user in Users){
+            lines.Add(user.ToString());
+        }
+        File.WriteAllLines("dane.txt",lines);
     }
 }
