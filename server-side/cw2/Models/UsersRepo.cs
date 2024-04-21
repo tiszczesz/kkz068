@@ -34,7 +34,7 @@ public class UsersRepo
     public void DeleteUser(int? id){
         var UserToRemove = Users.FirstOrDefault(u=>u.Id == id);
         if(UserToRemove != null){
-            Users.Remove(UserToRemove);
+            Users.Remove(UserToRemove);            
             SaveToFile();
         }        
     }
