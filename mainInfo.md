@@ -27,3 +27,9 @@ dotnet new page -n Page3 //tworzenie strony !! W katalogu Pages !!
 
 ```
 https://learn.microsoft.com/en-us/training/dotnet/
+
+## Łączenie z bazą danych Sqlite
+1. Potrzebny pakiet: Microsoft.Data.Sqlite;
+2. Do łączenia z bazą SqliteConnection
+3. Do przesyłania komend sql SqliteCommand
+4. Do odczytawania rekordów SqliteDataReader

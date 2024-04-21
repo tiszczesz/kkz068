@@ -15,3 +15,10 @@ INSERT INTO Books(title,author,price)
 VALUES("Jakaś bez tytułu","Roman Polański",45.89);
 
 DELETE FROM Books WHERE id>5;
+
+SELECT * FROM Books WHERE title LIKE "A%" 
+or 
+author like "A%" ;
+--selekcja wybor rekordow wierszy
+--projekcja wybor pol w rekordzie (kolumn)
+SELECT * FROM Books WHERE id={id}
