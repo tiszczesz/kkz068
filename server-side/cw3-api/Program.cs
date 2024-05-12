@@ -11,6 +11,7 @@ var app = builder.Build();
 app.MapGet("/", () => repo.GetBooks());
 app.MapGet("/{id}",(int id) => repo.GetBookById(id));
 app.MapDelete("/{id}",(int? id) => repo.DeleteBook(id));
+app.MapPost("/",(Book book)=>repo.InsertBook(book));
 
 
 app.Run();

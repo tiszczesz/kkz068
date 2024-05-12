@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using System.Globalization;
+using Microsoft.Data.Sqlite;
 
 namespace cw3_api;
 
@@ -63,5 +64,17 @@ public class BooksRepo
             conn.Open();
             var result = command.ExecuteNonQuery();
         }
+    }
+
+    public void InsertBook(Book book)
+    {
+       using (SqliteConnection conn = new SqliteConnection(_connString)){
+        SqliteCommand command = conn.CreateCommand();
+        string price = book.Price?.ToString(CultureInfo.InvariantCulture);
+        command.CommandText = $"INSERT INTO Books(title,author,price) "+
+         $"VALUES('{book.Title}','{book.Author}','{price}')";
+         conn.Open();
+         command.ExecuteNonQuery();
+       }
     }
 }
