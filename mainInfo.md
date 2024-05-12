@@ -36,7 +36,7 @@ https://learn.microsoft.com/en-us/training/dotnet/
 
 
 
-# Aplikacje klienckli
+# Aplikacje klienckie
 ### html css js typescript
 1. Strona W3Schools: https://www.w3schools.com/
 2. Strona Mozilla: https://developer.mozilla.org/en-US/
