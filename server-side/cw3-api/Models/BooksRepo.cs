@@ -43,6 +43,7 @@ public class BooksRepo
             command.CommandText = $"SELECT id,title,author,price FROM Books WHERE id={id}";
             conn.Open();
             SqliteDataReader rd = command.ExecuteReader();
+            if(!rd.HasRows) return null;
             rd.Read();
             book = new Book
             {
