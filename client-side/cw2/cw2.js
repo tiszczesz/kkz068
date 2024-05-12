@@ -1,4 +1,5 @@
 const colors = ["white", "red", "green", "blue", "yellow"];
+const sizes = [10, 15, 18, 20, 24, 28, 32];
 //wygeneroewać w root select i option z kolorami
 console.log(typeof colors);
 //zwykla for
@@ -23,4 +24,21 @@ colors.forEach((v) => {
     option.innerText = v;
     select.appendChild(option);
 });
+
 document.querySelector("#root").appendChild(select);
+select.addEventListener("change", (e) => {
+    document.querySelector(".scene").style.backgroundColor = e.target.value
+});
+for (let s of sizes) {
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.value = s;
+    radio.name = "size";
+    const label = document.createElement("label");
+    label.innerText = s + "px";
+    const br = document.createElement("br");
+    document.querySelector("#root2").appendChild(radio);
+    document.querySelector("#root2").appendChild(label);
+    document.querySelector("#root2").appendChild(br);
+    //todo 
+}

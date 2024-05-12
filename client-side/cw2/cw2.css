@@ -10,8 +10,13 @@ h1 {
     border-radius: 10px;
 }
 
-.container {
+.scene2 {
+    width: 70%;
+}
+
+.container,
+.container2 {
     display: flex;
-    
+
     justify-content: space-around;
 }
