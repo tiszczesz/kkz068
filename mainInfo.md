@@ -33,3 +33,11 @@ https://learn.microsoft.com/en-us/training/dotnet/
 2. Do łączenia z bazą SqliteConnection
 3. Do przesyłania komend sql SqliteCommand
 4. Do odczytawania rekordów SqliteDataReader
+
+
+
+# Aplikacje klienckli
+### html css js typescript
+1. Strona W3Schools: https://www.w3schools.com/
+2. Strona Mozilla: https://developer.mozilla.org/en-US/
+3. JSbin https://jsbin.com/?html,output
