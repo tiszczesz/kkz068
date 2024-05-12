@@ -10,11 +10,12 @@ const generCards = (data) => {
         card.className = "card m-2";
         card.style = "width: 18rem;";
         const h5 = document.createElement("h5");
-        h5.className = "card-title";
+        h5.className = "card-title text-center";
+        h5.style.color = "purple";
         h5.innerText = v.title;
         const cardBody = document.createElement("div");
         cardBody.className = "card-body"
-        const cardText = document.createElement("p");
+        const cardText = document.createElement("span");
         cardText.innerText = v.body;
         cardText.className = "card-text";
         cardBody.appendChild(h5);
