@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Do zrobienia</h1>
+    <!--
+        dodać przycisk który będzie zminiał kolor napisu w h1 z tablicy losowy
+        na inny a po kolejnym kliknieciu na czarny
+    -->
+    <input type="button" value="Zmień kolor" id="btn1">
+    <script>
+        const colors = ["white", "green", "blue", "red", "yellow", "purple"];
+        const h1 = document.querySelector("h1");
+        h1.style.color = "black";
+        document.querySelector("#btn1").addEventListener("click", () => {
+            let randomNumber = Math.floor(Math.random() * colors.length);
+
+            let color = h1.style.color !== "black"
+                ? "black" :
+                colors[randomNumber];
+            h1.style.color = color;
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
