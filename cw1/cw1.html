@@ -26,13 +26,24 @@
     <span style="background-color: yellow;">Inne lement span</span>
     <div>Ala ma kota</div>
     <p id="p1">...</p>
+    <div>
+        interakcja
+        <input type="button" id="btn1" value="Utwórz" >
+    </div>
     <script>
         //    for(let i =0;i<10;i++){
         //     console.log(" i = ",i);
         //    }
         //    //sdfsfds fsf ds
         //    console.log(i);
-
+        document.querySelector("#btn1").addEventListener("click",()=>{
+            //dodać nowy element na stronie
+            console.log("Robimy....");
+            const p = document.createElement("p");
+            p.innerText = "Po kliknięciu powstałem";
+            document.body.appendChild(p);
+            document.body.style.backgroundColor = "green";
+        })
         document.write("<p>Ala juz nie ma kota</p>");
         const p1 = document.querySelector("#p1");
         const lorem = document.querySelector("#lorem");
@@ -42,7 +53,7 @@
         setTimeout(()=>{
              lorem.innerText = "... i nie ma";
         },5000);
-       
+        
         console.log(p1.textContent);
         
     </script>
