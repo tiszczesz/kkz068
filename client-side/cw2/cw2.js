@@ -27,7 +27,7 @@ colors.forEach((v) => {
 
 document.querySelector("#root").appendChild(select);
 select.addEventListener("change", (e) => {
-    document.querySelector(".scene").style.backgroundColor = e.target.value
+    document.querySelector(".scene").style.backgroundColor = e.target.value;
 });
 for (let s of sizes) {
     const radio = document.createElement("input");
@@ -41,4 +41,8 @@ for (let s of sizes) {
     document.querySelector("#root2").appendChild(label);
     document.querySelector("#root2").appendChild(br);
     //todo 
+    radio.addEventListener("click", (e) => {
+        console.log(`kliknięto: ${e.target.value}px`);
+        document.querySelector(".scene2").style.fontSize = e.target.value+"px";
+    });
 }
