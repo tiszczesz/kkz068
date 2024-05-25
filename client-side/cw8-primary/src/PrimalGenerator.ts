@@ -12,14 +12,14 @@ export default class PrimalGenerator {
     }
     //napisac metode zwracajaca array liczb pierwszych o rozmiarze
     //limit
-    public getPrimals():number[]{
-        const numbers:number[] = [];
+    public getPrimals(): number[] {
+        const numbers: number[] = [];
         let current = 2;
-        while(numbers.length<this.limit){
-            if(this.isPrimal(current)){
+        while (numbers.length < this.limit) {
+            if (this.isPrimal(current)) {
                 numbers.push(current)
             }
-            current++;
+            current++
         }
         return numbers;
     }
