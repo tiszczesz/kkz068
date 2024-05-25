@@ -4,13 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Strona index.html</h1>
-    <div id="root"></div>
+    <div class="container">
+        <h1>Strona index.html</h1>
+        <div class="row m-2">
+            <label class="col-3 text-end" for="A">A = </label>
+            <input class="col-3" type="number" name="A" id="A" min="0" required>
+        </div>
+        <div class="row m-2">
+            <label class="col-3 text-end" for="B">B = </label>
+            <input class="col-3" type="number" name="B" id="B" min="0" required>
+        </div>
+        <div class="row">
+            <input class="offset-3 col-3 btn btn-primary" type="button" value="Oblicz" id="run">
+        </div>
+        <div class="m-3" id="result" style="min-height: 50px;border: solid 1px green;padding: 20px;"></div>
+        <div id="root"></div>
+    </div>
+
     <script src="../index.js" defer></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
