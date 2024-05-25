@@ -19,9 +19,19 @@
             <label class="col-3 text-end" for="B">B = </label>
             <input class="col-3" type="number" name="B" id="B" min="0" required>
         </div>
-        <div class="row">
+
+        <div class="row m-2">
+            <div class="offset-3 col-3"><input checked="true" type="radio" name="choice" value="iter">
+                <label>Iteracyjnie </label>
+            </div>
+            <div class="col-3"><input type="radio" name="choice" value="rek">
+                <label>Rekurencyjnie</label>
+            </div>
+        </div>
+        <div class="row m-2">
             <input class="offset-3 col-3 btn btn-primary" type="button" value="Oblicz" id="run">
         </div>
+
         <div class="m-3" id="result" style="min-height: 50px;border: solid 1px green;padding: 20px;"></div>
         <div id="root"></div>
     </div>
