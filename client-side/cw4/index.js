@@ -5,13 +5,15 @@ h3.innerText = "Jestem z JS";
 root.appendChild(h3);
 //nowy h3 z napisem---> jestem z JS
 document.querySelector("#run").addEventListener("click", () => {
+    const radios = document.querySelectorAll("input[name=choice]");
+    console.log(radios);
     const number1 = parseInt(document.querySelector("#A").value);
     const number2 = parseInt(document.querySelector("#B").value);
-    if(!isNaN(number1) && !isNaN(number2)){
-        const result = NWDIter(number1,number2);
+    if (!isNaN(number1) && !isNaN(number2)) {
+        const result = NWDIter(number1, number2);
         document.querySelector("#result").innerHTML = `NWD(${number1},${number2})
            = ${result}`;
-    }else{
+    } else {
         alert("Błędne dane!!!!");
         document.querySelector("#result").innerHTML = ``;
     }
