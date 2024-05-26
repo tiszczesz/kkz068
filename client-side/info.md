@@ -31,7 +31,7 @@ npx tsc -init
 {
     "compilerOptions": {   
     "target": "ES2022",  
-    "module": "ES6",                              
+    "module": "ESNext",                              
      "rootDir": "./src",   
      "outDir": "./dist",    
     "esModuleInterop": true,  
@@ -62,6 +62,51 @@ npx tsc -init
 }
 
 ```
+
+## Tworzenie projektu Vite
+
+### Typescript i WWWW
+
+https://vitejs.dev/guide/
+
+```console
+    npm create vite@latest
+    // potem wybór odpowiedniej opcji 
+    // np vanilla -> typescript
+
+```
+### Tworzenie projektu React z Vite:
+
+```console
+    npm create vite@latest
+    // potem wybór odpowiedniej opcji 
+    // np react -> typescript
+
+```
+
+### Tworzenie projektu React z create-react-app: (wykorzystanie webpack)
+
+```console
+//jesli jest potrzeba
+npm -g i create-react-app
+//ewentualnie
+npm -g uninstall create-react-app
+
+// react i js
+npx create-react-app nazwa-aplikacji
+
+//z typescript
+npx create-react-app nazwa-aplikacji --template typescript
+
+// potem
+cd nazwa-aplikacji
+code .
+npm i bootstrap
+//dodac sciezke do bootstrapa np. App.tsx  
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 
+```
+
 
 ## Angular informacje
 https://angular.io/
