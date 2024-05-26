@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+  const info = "To jest informacja z kodu TS";
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1 className='main'>To jest nagłówek</h1>
+      <div>Hello</div>
+      <ul>
+        <li>Aaaa</li>
+        <li>Aaaa</li>
+        <li>Aaaa</li>
+        <li>Aaaa</li>
+      </ul>
+      <select >
+        <option value="red">czerwony</option>
+        <option value="green">zielony</option>
+        <option value="blue">niebieski</option>
+        <option value="yellow">żółty</option>
+      </select>
+      <div style={{color:"red",textAlign:"right"}}>{info}</div>
+      <hr />
+      <h1>GGGG</h1>
+    </>
+
   );
 }
 

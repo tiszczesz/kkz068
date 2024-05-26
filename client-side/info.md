@@ -1,5 +1,10 @@
 # Informacje wstępne JS
 
+
+## skróty do VS code:
+
+https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+
 ## Strony dev:
 
 1. Mozilla: https://developer.mozilla.org/en-US/docs/Web/JavaScript
