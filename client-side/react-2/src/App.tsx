@@ -1,4 +1,5 @@
-import './App.css'
+import './App.css';
+import { Car, cars } from './data/cars';
 
 function App() {
 
@@ -22,6 +23,11 @@ function App() {
       <select>
         {colors.map((e, k) => (<option key={k}>{e}</option>))}
       </select>
+      <ul>
+        {cars.map((e, k) => (
+          <li key={k}>{e.marka} {e.przebieg} km {e.cena} zł</li>
+        ))}
+      </ul>
     </>
   )
 }
