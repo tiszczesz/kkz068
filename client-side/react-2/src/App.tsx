@@ -28,6 +28,24 @@ function App() {
           <li key={k}>{e.marka} {e.przebieg} km {e.cena} zł</li>
         ))}
       </ul>
+
+      <hr />
+      <table>
+        <tr>
+          <th>Lp</th>
+          <th>Marka</th>
+          <th>przebieg</th>
+          <th>cena</th>
+        </tr>
+        {cars.map((c, i) => (
+          <tr key={i}>
+            <td>{i + 1}</td>
+            <td>{c.marka}</td>
+            <td>{c.przebieg}</td>
+            <td>{c.cena}</td>
+          </tr>
+        ))}
+      </table>
     </>
   )
 }
