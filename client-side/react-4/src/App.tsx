@@ -15,8 +15,11 @@ function App() {
   }
 
   function handleAdd(movie: Movie): void {
+    const ids =  moviesList.map((m)=>m.id);
+    const newId = Math.max(...ids) + 1;
+    movie.id = newId;
     console.log(`adding new movie ${movie}`);
-    
+    setMoviesList([...moviesList, movie]);
   }
 
   return (
