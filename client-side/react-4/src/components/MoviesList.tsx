@@ -1,14 +1,11 @@
-
-
+import { Movie } from "../data/movies";
 
 type Props = {
-    movies:Movie[]
-}
+  list: Movie[];
+};
 
-const MoviesList = ({movies}: Props) => {
-  return (
-    <h2>Lista filmów</h2>
-  )
-}
+const MoviesList = ({ list: movies }: Props) => {
+  return <h2>Lista filmów</h2>;
+};
 
-export default MoviesList
+export default MoviesList;
