@@ -4,7 +4,9 @@ type Props = {
   list: Movie[];
 };
 
-const MoviesList = ({ list: movies }: Props) => {
+const MoviesList = (props: Props) => {
+    console.log(props.list);
+    
   return <h2>Lista filmów</h2>;
 };
 
