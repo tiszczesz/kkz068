@@ -2,6 +2,7 @@ import { Movie } from '../data/movies';
 
 type Props = {
   list: Movie[];
+  onDelete: (id: number) => void;
 };
 
 const MoviesList = (props: Props) => {
@@ -30,7 +31,9 @@ const MoviesList = (props: Props) => {
               <td>{m.date}</td>
               <td style={{textAlign:'right'}}>{m.price}</td>
               <td >
-                <input type="button" value="Usuń" className='btn btn-danger'/>
+                <input type="button" value="Usuń" className='btn btn-danger'
+                    onClick={()=>props.onDelete(m.id)}
+                />
               </td>
             </tr>
           ))}
