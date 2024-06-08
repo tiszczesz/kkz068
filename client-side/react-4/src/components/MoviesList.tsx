@@ -18,6 +18,7 @@ const MoviesList = (props: Props) => {
             <th>Reżyser</th>
             <th>Rok produkcji</th>
             <th>Cena</th>
+            <th>Operacje</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +29,9 @@ const MoviesList = (props: Props) => {
               <td>{m.director}</td>
               <td>{m.date}</td>
               <td style={{textAlign:'right'}}>{m.price}</td>
+              <td >
+                <input type="button" value="Usuń" className='btn btn-danger'/>
+              </td>
             </tr>
           ))}
         </tbody>
