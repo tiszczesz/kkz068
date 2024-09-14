@@ -33,11 +33,11 @@
             lbCount = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
+            lbHint = new Label();
+            lbTakes = new Label();
             btnCheck = new Button();
             btnStart = new Button();
             tbNumber = new TextBox();
-            lbTakes = new Label();
-            lbHint = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -101,8 +101,26 @@
             panel2.Size = new Size(483, 204);
             panel2.TabIndex = 4;
             // 
+            // lbHint
+            // 
+            lbHint.AutoSize = true;
+            lbHint.Location = new Point(238, 85);
+            lbHint.Name = "lbHint";
+            lbHint.Size = new Size(0, 20);
+            lbHint.TabIndex = 4;
+            // 
+            // lbTakes
+            // 
+            lbTakes.AutoSize = true;
+            lbTakes.Location = new Point(219, 28);
+            lbTakes.Name = "lbTakes";
+            lbTakes.Size = new Size(82, 20);
+            lbTakes.TabIndex = 3;
+            lbTakes.Text = "Ilość prób: ";
+            // 
             // btnCheck
             // 
+            btnCheck.Enabled = false;
             btnCheck.Location = new Point(12, 111);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(125, 29);
@@ -128,23 +146,6 @@
             tbNumber.PlaceholderText = "podaj liczbę";
             tbNumber.Size = new Size(125, 27);
             tbNumber.TabIndex = 0;
-            // 
-            // lbTakes
-            // 
-            lbTakes.AutoSize = true;
-            lbTakes.Location = new Point(219, 28);
-            lbTakes.Name = "lbTakes";
-            lbTakes.Size = new Size(82, 20);
-            lbTakes.TabIndex = 3;
-            lbTakes.Text = "Ilość prób: ";
-            // 
-            // lbHint
-            // 
-            lbHint.AutoSize = true;
-            lbHint.Location = new Point(238, 85);
-            lbHint.Name = "lbHint";
-            lbHint.Size = new Size(0, 20);
-            lbHint.TabIndex = 4;
             // 
             // Form1
             // 
