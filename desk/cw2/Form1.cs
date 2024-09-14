@@ -62,6 +62,7 @@ namespace cw2
             }
             catch (FormatException ex) {
                 MessageBox.Show("B³edne dane");
+
                 return;
             }
            
