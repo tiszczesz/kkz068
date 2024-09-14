@@ -30,7 +30,7 @@ partial class Form1
     {
         tbA = new TextBox();
         tbB = new TextBox();
-        comboBox1 = new ComboBox();
+        cbOparation = new ComboBox();
         label1 = new Label();
         SuspendLayout();
         // 
@@ -50,14 +50,15 @@ partial class Form1
         tbB.Size = new Size(125, 27);
         tbB.TabIndex = 1;
         // 
-        // comboBox1
+        // cbOparation
         // 
-        comboBox1.FormattingEnabled = true;
-        comboBox1.Items.AddRange(new object[] { "+", "-", "*", "/" });
-        comboBox1.Location = new Point(185, 71);
-        comboBox1.Name = "comboBox1";
-        comboBox1.Size = new Size(114, 28);
-        comboBox1.TabIndex = 2;
+        cbOparation.DropDownStyle = ComboBoxStyle.DropDownList;
+        cbOparation.FormattingEnabled = true;
+        cbOparation.Items.AddRange(new object[] { "+", "-", "*", "/" });
+        cbOparation.Location = new Point(185, 71);
+        cbOparation.Name = "cbOparation";
+        cbOparation.Size = new Size(114, 28);
+        cbOparation.TabIndex = 2;
         // 
         // label1
         // 
@@ -74,7 +75,7 @@ partial class Form1
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(486, 615);
         Controls.Add(label1);
-        Controls.Add(comboBox1);
+        Controls.Add(cbOparation);
         Controls.Add(tbB);
         Controls.Add(tbA);
         Name = "Form1";
@@ -87,6 +88,6 @@ partial class Form1
 
     private TextBox tbA;
     private TextBox tbB;
-    private ComboBox comboBox1;
+    private ComboBox cbOparation;
     private Label label1;
 }
