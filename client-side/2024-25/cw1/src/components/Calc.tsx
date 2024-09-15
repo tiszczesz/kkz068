@@ -9,6 +9,7 @@ const Calc = () => {
     e.preventDefault();
     console.log('submit');
     console.log(a, b, op);
+    
   }
 
   return (
