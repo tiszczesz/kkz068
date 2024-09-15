@@ -21,7 +21,7 @@ const Calc = () => {
         setResult(`${a} * ${b} = ${a * b}`);
         break;
       case '/':
-        setResult(`${a} / ${b} = ${b != 0 ? a / b : error}`);
+        setResult(`${a} / ${b} = ${b != 0 ? (a / b).toFixed(2) : error}`);
         break;
       default:
         setResult('Błąd');
