@@ -9,7 +9,24 @@ const Calc = () => {
     e.preventDefault();
     console.log('submit');
     console.log(a, b, op);
-    
+    const error = 'BRAK WYNIKU';
+    switch (op) {
+      case '+':
+        setResult(`${a} + ${b} = ${a + b}`);
+        break;
+      case '-':
+        setResult(`${a} - ${b} = ${a - b}`);
+        break;
+      case '*':
+        setResult(`${a} * ${b} = ${a * b}`);
+        break;
+      case '/':
+        setResult(`${a} / ${b} = ${b != 0 ? a / b : error}`);
+        break;
+      default:
+        setResult('Błąd');
+        break;
+    }
   }
 
   return (
@@ -29,7 +46,7 @@ const Calc = () => {
             className="col-6"
             type="number"
             value={b}
-            onChange={(e) => setB(parseInt(e.target.value))}
+            onChange={(e) => setB(Number(e.target.value))}
           />
           <span className="col-3 error"></span>
         </div>
