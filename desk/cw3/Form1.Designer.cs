@@ -31,7 +31,7 @@ partial class Form1
         tbA = new TextBox();
         tbB = new TextBox();
         cbOparation = new ComboBox();
-        label1 = new Label();
+        lbResult = new Label();
         SuspendLayout();
         // 
         // tbA
@@ -59,22 +59,24 @@ partial class Form1
         cbOparation.Name = "cbOparation";
         cbOparation.Size = new Size(114, 28);
         cbOparation.TabIndex = 2;
+        cbOparation.SelectedIndexChanged += cbOparation_SelectedIndexChanged;
         // 
-        // label1
+        // lbResult
         // 
-        label1.AutoSize = true;
-        label1.Location = new Point(352, 74);
-        label1.Name = "label1";
-        label1.Size = new Size(50, 20);
-        label1.TabIndex = 3;
-        label1.Text = "label1";
+        lbResult.AutoSize = true;
+        lbResult.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
+        lbResult.Location = new Point(352, 68);
+        lbResult.Name = "lbResult";
+        lbResult.Size = new Size(76, 31);
+        lbResult.TabIndex = 3;
+        lbResult.Text = "Wynik";
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(486, 615);
-        Controls.Add(label1);
+        ClientSize = new Size(733, 213);
+        Controls.Add(lbResult);
         Controls.Add(cbOparation);
         Controls.Add(tbB);
         Controls.Add(tbA);
@@ -89,5 +91,5 @@ partial class Form1
     private TextBox tbA;
     private TextBox tbB;
     private ComboBox cbOparation;
-    private Label label1;
+    private Label lbResult;
 }
