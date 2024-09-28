@@ -15,7 +15,7 @@ namespace cw4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("fffff");
+            // MessageBox.Show("fffff");
             var color = tbItem.Text;
             if (!cbIsInsert.Checked)
             {
@@ -54,9 +54,17 @@ namespace cw4
 
         private void btnLoadFromFile_Click(object sender, EventArgs e)
         {
-            if (File.Exists(_fileName)) {
+            if (File.Exists(_fileName))
+            {
                 lbColors.Items.Clear();
                 lbColors.Items.AddRange(File.ReadAllLines(_fileName));
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lbColors.SelectedIndex != -1) {
+                lbColors.Items.RemoveAt(lbColors.SelectedIndex);
             }
         }
     }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnDelete = new Button();
             cbIsInsert = new CheckBox();
             tbItem = new TextBox();
             btnAdd = new Button();
             lbColors = new ListBox();
             btnLoadFromFile = new Button();
             btnSaveToFile = new Button();
-            btnDelete = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +51,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(440, 450);
             panel1.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(3, 47);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Usuń";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // cbIsInsert
             // 
@@ -111,15 +121,6 @@
             btnSaveToFile.Text = "Zapisz do pliku";
             btnSaveToFile.UseVisualStyleBackColor = true;
             btnSaveToFile.Click += btnSaveToFile_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Location = new Point(3, 47);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Usuń";
-            btnDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
