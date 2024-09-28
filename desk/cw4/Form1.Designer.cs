@@ -29,22 +29,39 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cbIsInsert = new CheckBox();
             tbItem = new TextBox();
             btnAdd = new Button();
             lbColors = new ListBox();
+            btnLoadFromFile = new Button();
+            btnSaveToFile = new Button();
+            btnDelete = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(cbIsInsert);
             panel1.Controls.Add(tbItem);
             panel1.Controls.Add(btnAdd);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(317, 450);
+            panel1.Size = new Size(440, 450);
             panel1.TabIndex = 0;
+            // 
+            // cbIsInsert
+            // 
+            cbIsInsert.AutoSize = true;
+            cbIsInsert.Location = new Point(317, 8);
+            cbIsInsert.Name = "cbIsInsert";
+            cbIsInsert.Size = new Size(72, 24);
+            cbIsInsert.TabIndex = 2;
+            cbIsInsert.Text = "wstaw";
+            cbIsInsert.UseVisualStyleBackColor = true;
+            cbIsInsert.CheckedChanged += cbIsInsert_CheckedChanged;
             // 
             // tbItem
             // 
@@ -70,20 +87,52 @@
             lbColors.Dock = DockStyle.Left;
             lbColors.FormattingEnabled = true;
             lbColors.Items.AddRange(new object[] { "czerwony", "zielony", "żółty", "czarny" });
-            lbColors.Location = new Point(317, 0);
+            lbColors.Location = new Point(440, 0);
             lbColors.Name = "lbColors";
             lbColors.Size = new Size(214, 450);
             lbColors.TabIndex = 1;
+            // 
+            // btnLoadFromFile
+            // 
+            btnLoadFromFile.Location = new Point(679, 24);
+            btnLoadFromFile.Name = "btnLoadFromFile";
+            btnLoadFromFile.Size = new Size(174, 29);
+            btnLoadFromFile.TabIndex = 2;
+            btnLoadFromFile.Text = "Pobierz z pliku";
+            btnLoadFromFile.UseVisualStyleBackColor = true;
+            btnLoadFromFile.Click += btnLoadFromFile_Click;
+            // 
+            // btnSaveToFile
+            // 
+            btnSaveToFile.Location = new Point(679, 69);
+            btnSaveToFile.Name = "btnSaveToFile";
+            btnSaveToFile.Size = new Size(174, 29);
+            btnSaveToFile.TabIndex = 3;
+            btnSaveToFile.Text = "Zapisz do pliku";
+            btnSaveToFile.UseVisualStyleBackColor = true;
+            btnSaveToFile.Click += btnSaveToFile_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(3, 47);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Usuń";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(897, 450);
+            Controls.Add(btnSaveToFile);
+            Controls.Add(btnLoadFromFile);
             Controls.Add(lbColors);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -95,5 +144,9 @@
         private Button btnAdd;
         private ListBox lbColors;
         private TextBox tbItem;
+        private CheckBox cbIsInsert;
+        private Button btnLoadFromFile;
+        private Button btnSaveToFile;
+        private Button btnDelete;
     }
 }
