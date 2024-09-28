@@ -33,5 +33,9 @@ namespace cw5.Models
             }
             return null;
         }
+
+        public static string PersonToLine(Person p) {
+            return $"{p.FirstName},{p.LastName},{p.Age},{p.Phone},{p.IsFamily}";
+        }
     }
 }

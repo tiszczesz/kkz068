@@ -1,38 +1,31 @@
 using cw5.Models;
 
-namespace cw5
-{
-    public partial class Form1 : Form
-    {
+namespace cw5 {
+    public partial class Form1 : Form {
         private ContactsRepo _contacts;
-        public Form1()
-        {
+
+        public Form1() {
             InitializeComponent();
             _contacts = new ContactsRepo();
             panelInfo.BackColor = Color.AliceBlue;
             openFileDialog1.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
+        private void btnLoad_Click(object sender, EventArgs e) {
+            try {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK) {
                     _contacts.GetFromFile(openFileDialog1.FileName);
+                    lbContacts.DataSource = null;
                     lbContacts.DataSource = _contacts.People;
+                    btnSaveContacts.Enabled = true;
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show($"B³¹d otwarcia pliku: {ex.Message}");
             }
-
         }
 
-        private void lbContacts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+        private void lbContacts_SelectedIndexChanged(object sender, EventArgs e) {
             UpdateForm(lbContacts.SelectedIndex);
         }
 
@@ -42,9 +35,31 @@ namespace cw5
                 tbPersonLastName.Text = _contacts.People[index].LastName;
                 tbPersonAge.Text = _contacts.People[index].Age.ToString();
                 tbPersonPhone.Text = _contacts.People[index].Phone;
-                panelInfo.BackColor = _contacts.People[index].IsFamily 
-                    ? Color.Aquamarine 
-                    : Color.AliceBlue;
+                if (_contacts.People[index].IsFamily) {
+                    panelInfo.BackColor = Color.Aquamarine;
+                    pbSmileImage.Visible = true;
+                }
+                else {
+                    panelInfo.BackColor = Color.AliceBlue;
+                    pbSmileImage.Visible = false;
+                }
+            }
+        }
+
+        private void btnAddContact_Click(object sender, EventArgs e) {
+            new AddContactForm(this).ShowDialog();
+        }
+
+        public void AddPerson(Person person) {
+            _contacts.People.Add(person);
+            lbContacts.DataSource = null;
+            lbContacts.DataSource = _contacts.People;
+            btnSaveContacts.Enabled = true;
+        }
+
+        private void btnSaveContacts_Click(object sender, EventArgs e) {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+                _contacts.SaveToFile(saveFileDialog1.FileName);
             }
         }
     }

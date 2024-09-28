@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnSaveContacts = new Button();
+            btnAddContact = new Button();
             btnLoad = new Button();
             lbContacts = new ListBox();
             openFileDialog1 = new OpenFileDialog();
             panelInfo = new Panel();
+            pbSmileImage = new PictureBox();
             tbPersonPhone = new TextBox();
             tbPersonAge = new TextBox();
             tbPersonLastName = new TextBox();
@@ -42,20 +45,43 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
+            saveFileDialog1 = new SaveFileDialog();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSmileImage).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnSaveContacts);
+            panel1.Controls.Add(btnAddContact);
             panel1.Controls.Add(btnLoad);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 643);
             panel1.TabIndex = 0;
+            // 
+            // btnSaveContacts
+            // 
+            btnSaveContacts.Enabled = false;
+            btnSaveContacts.Location = new Point(12, 126);
+            btnSaveContacts.Name = "btnSaveContacts";
+            btnSaveContacts.Size = new Size(209, 29);
+            btnSaveContacts.TabIndex = 2;
+            btnSaveContacts.Text = "Zapisz kontakty";
+            btnSaveContacts.UseVisualStyleBackColor = true;
+            btnSaveContacts.Click += btnSaveContacts_Click;
+            // 
+            // btnAddContact
+            // 
+            btnAddContact.Location = new Point(12, 78);
+            btnAddContact.Name = "btnAddContact";
+            btnAddContact.Size = new Size(209, 29);
+            btnAddContact.TabIndex = 1;
+            btnAddContact.Text = "Nowy kontakt";
+            btnAddContact.UseVisualStyleBackColor = true;
+            btnAddContact.Click += btnAddContact_Click;
             // 
             // btnLoad
             // 
@@ -85,7 +111,7 @@
             // panelInfo
             // 
             panelInfo.BorderStyle = BorderStyle.FixedSingle;
-            panelInfo.Controls.Add(pictureBox1);
+            panelInfo.Controls.Add(pbSmileImage);
             panelInfo.Controls.Add(tbPersonPhone);
             panelInfo.Controls.Add(tbPersonAge);
             panelInfo.Controls.Add(tbPersonLastName);
@@ -100,10 +126,21 @@
             panelInfo.Size = new Size(424, 574);
             panelInfo.TabIndex = 2;
             // 
+            // pbSmileImage
+            // 
+            pbSmileImage.Image = Properties.Resources.smile;
+            pbSmileImage.Location = new Point(66, 273);
+            pbSmileImage.Name = "pbSmileImage";
+            pbSmileImage.Size = new Size(231, 232);
+            pbSmileImage.TabIndex = 9;
+            pbSmileImage.TabStop = false;
+            pbSmileImage.Visible = false;
+            // 
             // tbPersonPhone
             // 
             tbPersonPhone.Location = new Point(113, 206);
             tbPersonPhone.Name = "tbPersonPhone";
+            tbPersonPhone.ReadOnly = true;
             tbPersonPhone.Size = new Size(242, 27);
             tbPersonPhone.TabIndex = 8;
             // 
@@ -111,6 +148,7 @@
             // 
             tbPersonAge.Location = new Point(113, 158);
             tbPersonAge.Name = "tbPersonAge";
+            tbPersonAge.ReadOnly = true;
             tbPersonAge.Size = new Size(242, 27);
             tbPersonAge.TabIndex = 7;
             // 
@@ -118,6 +156,7 @@
             // 
             tbPersonLastName.Location = new Point(113, 110);
             tbPersonLastName.Name = "tbPersonLastName";
+            tbPersonLastName.ReadOnly = true;
             tbPersonLastName.Size = new Size(242, 27);
             tbPersonLastName.TabIndex = 6;
             // 
@@ -125,6 +164,7 @@
             // 
             tbPersonFirstName.Location = new Point(113, 62);
             tbPersonFirstName.Name = "tbPersonFirstName";
+            tbPersonFirstName.ReadOnly = true;
             tbPersonFirstName.Size = new Size(242, 27);
             tbPersonFirstName.TabIndex = 5;
             // 
@@ -174,14 +214,9 @@
             label1.TabIndex = 0;
             label1.Text = "Szczegóły kontaktu";
             // 
-            // pictureBox1
+            // saveFileDialog1
             // 
-            pictureBox1.Image = Properties.Resources.smile;
-            pictureBox1.Location = new Point(66, 273);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(231, 232);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            saveFileDialog1.DefaultExt = "csv";
             // 
             // Form1
             // 
@@ -196,7 +231,7 @@
             panel1.ResumeLayout(false);
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSmileImage).EndInit();
             ResumeLayout(false);
         }
 
@@ -216,6 +251,9 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox pbSmileImage;
+        private Button btnAddContact;
+        private Button btnSaveContacts;
+        private SaveFileDialog saveFileDialog1;
     }
 }
