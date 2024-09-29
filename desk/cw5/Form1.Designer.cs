@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnRemove = new Button();
             btnSaveContacts = new Button();
             btnAddContact = new Button();
             btnLoad = new Button();
@@ -53,6 +54,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnRemove);
             panel1.Controls.Add(btnSaveContacts);
             panel1.Controls.Add(btnAddContact);
             panel1.Controls.Add(btnLoad);
@@ -61,6 +63,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 643);
             panel1.TabIndex = 0;
+            // 
+            // btnRemove
+            // 
+            btnRemove.BackColor = Color.FromArgb(255, 128, 128);
+            btnRemove.Enabled = false;
+            btnRemove.Location = new Point(12, 174);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(209, 29);
+            btnRemove.TabIndex = 3;
+            btnRemove.Text = "Usuń wybrany kontakt";
+            btnRemove.UseVisualStyleBackColor = false;
+            btnRemove.Click += btnRemove_Click;
             // 
             // btnSaveContacts
             // 
@@ -255,5 +269,6 @@
         private Button btnAddContact;
         private Button btnSaveContacts;
         private SaveFileDialog saveFileDialog1;
+        private Button btnRemove;
     }
 }
