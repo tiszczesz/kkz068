@@ -64,6 +64,7 @@ partial class Form1
         // 
         // cbOcupation
         // 
+        cbOcupation.DropDownStyle = ComboBoxStyle.DropDownList;
         cbOcupation.FormattingEnabled = true;
         cbOcupation.Items.AddRange(new object[] { "Kierownik", "Starszy programista", "Młodszy programista", "Tester" });
         cbOcupation.Location = new Point(109, 151);
