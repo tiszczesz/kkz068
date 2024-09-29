@@ -67,6 +67,7 @@ namespace cw5 {
         private void btnAddContact_Click(object sender, EventArgs e)
         {
             new AddContactForm(this).ShowDialog();
+            btnRemove.Enabled = true;
         }
 
         public void AddPerson(Person person)
