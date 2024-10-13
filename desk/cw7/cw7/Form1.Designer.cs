@@ -29,45 +29,60 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnLoad = new Button();
+            dgvPeople = new DataGridView();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPeople).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(btnLoad);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(168, 568);
             panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // btnLoad
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(168, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(838, 568);
-            dataGridView1.TabIndex = 1;
+            btnLoad.Location = new Point(12, 21);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(133, 46);
+            btnLoad.TabIndex = 0;
+            btnLoad.Text = "Pobierz z pliu";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
+            // 
+            // dgvPeople
+            // 
+            dgvPeople.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPeople.Dock = DockStyle.Fill;
+            dgvPeople.Location = new Point(168, 0);
+            dgvPeople.Name = "dgvPeople";
+            dgvPeople.RowHeadersWidth = 51;
+            dgvPeople.Size = new Size(838, 568);
+            dgvPeople.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1006, 568);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPeople);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPeople).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPeople;
+        private Button btnLoad;
     }
 }
