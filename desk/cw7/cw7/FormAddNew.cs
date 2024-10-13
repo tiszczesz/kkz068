@@ -18,5 +18,11 @@ namespace cw7
             InitializeComponent();
             _form = form;
         }
+
+        private void tbFirstname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) 
+                   && !char.IsControl(e.KeyChar);
+        }
     }
 }
