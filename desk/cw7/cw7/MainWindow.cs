@@ -65,7 +65,12 @@ namespace cw7
 
         private void dgvPeople_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Double click");
+            if (dgvPeople.SelectedRows.Count > 0)
+            {
+                var formUpdate = new UpdateContact(this);
+                formUpdate.ShowDialog();
+            }
+            
         }
 
         private void dgvPeople_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
