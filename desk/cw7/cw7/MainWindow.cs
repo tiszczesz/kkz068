@@ -5,7 +5,7 @@ namespace cw7
 {
     public partial class MainWindow : Form
     {
-        private PeopleRepo _repo;
+        public PeopleRepo repo;
         public MainWindow()
         {
             InitializeComponent();
@@ -15,9 +15,9 @@ namespace cw7
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            _repo = new PeopleRepo();
-            var people = _repo.People;
-            dgvPeople.DataSource = people;
+            repo = new PeopleRepo();
+            var people = repo.People;
+            RefreshData();
             dgvPeople.Columns["Id"].Visible = false;
             dgvPeople.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
@@ -27,7 +27,12 @@ namespace cw7
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             var addForm = new FormAddNew(this);
-            addForm.ShowDialog();
+            addForm.ShowDialog();            
+        }
+        public void RefreshData()
+        {
+            dgvPeople.DataSource = null;
+            dgvPeople.DataSource = repo.People;
         }
     }
 }

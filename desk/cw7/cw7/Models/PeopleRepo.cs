@@ -14,5 +14,13 @@ namespace cw7.Models
             string content = File.ReadAllText(pathFile);
             People = JsonSerializer.Deserialize<List<Person>>(content);
         }
+        public int GetLastId()
+        {
+            if(People == null || People.Count == 0)
+            {
+                return 0;
+            }
+            return People.Max(p => p.Id);
+        }
     }
 }

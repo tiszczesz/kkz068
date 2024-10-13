@@ -37,7 +37,7 @@
             tbEmail = new TextBox();
             mcDate = new MonthCalendar();
             btnSave = new Button();
-            button2 = new Button();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // label1
@@ -90,6 +90,7 @@
             tbLastname.Name = "tbLastname";
             tbLastname.Size = new Size(314, 27);
             tbLastname.TabIndex = 5;
+            tbLastname.KeyPress += tbFirstname_KeyPress;
             // 
             // tbEmail
             // 
@@ -112,22 +113,26 @@
             btnSave.TabIndex = 8;
             btnSave.Text = "Zapisz";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
-            // button2
+            // btnCancel
             // 
-            button2.Location = new Point(300, 469);
-            button2.Name = "button2";
-            button2.Size = new Size(209, 43);
-            button2.TabIndex = 9;
-            button2.Text = "Anuluj";
-            button2.UseVisualStyleBackColor = true;
+            btnCancel.Location = new Point(300, 469);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(209, 43);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Anuluj";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // FormAddNew
             // 
+            AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
             ClientSize = new Size(592, 555);
-            Controls.Add(button2);
+            Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(mcDate);
             Controls.Add(tbEmail);
@@ -154,6 +159,6 @@
         private TextBox tbEmail;
         private MonthCalendar mcDate;
         private Button btnSave;
-        private Button button2;
+        private Button btnCancel;
     }
 }
