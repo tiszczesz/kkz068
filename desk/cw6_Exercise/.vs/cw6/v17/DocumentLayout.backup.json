@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|d:\\zdalne\\kkz068\\desk\\cw6_exercise\\cw6\\models\\numbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|c:\\users\\admin\\documents\\github\\kkz068\\desk\\cw6_exercise\\cw6\\models\\numbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|solutionrelative:cw6\\models\\numbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|d:\\zdalne\\kkz068\\desk\\cw6_exercise\\cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|c:\\users\\admin\\documents\\github\\kkz068\\desk\\cw6_exercise\\cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|solutionrelative:cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|d:\\zdalne\\kkz068\\desk\\cw6_exercise\\cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C3CAFFEC-9B0B-46E3-ABA3-F0F8554D9EB7}|cw6\\cw6.csproj|solutionrelative:cw6\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
               "RelativeDocumentMoniker": "cw6\\Form1.cs",
-              "ToolTip": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
               "RelativeToolTip": "cw6\\Form1.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAIA6wBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -41,23 +41,21 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs",
               "RelativeDocumentMoniker": "cw6\\Form1.cs",
               "ToolTip": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Form1.cs [Design]",
-              "RelativeToolTip": "cw6\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T08:39:49.814Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-09-29T08:39:49.814Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Numbers.cs",
-              "DocumentMoniker": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Models\\Numbers.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\Models\\Numbers.cs",
               "RelativeDocumentMoniker": "cw6\\Models\\Numbers.cs",
-              "ToolTip": "D:\\zdalne\\kkz068\\desk\\cw6_Exercise\\cw6\\Models\\Numbers.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\kkz068\\desk\\cw6_Exercise\\cw6\\Models\\Numbers.cs",
               "RelativeToolTip": "cw6\\Models\\Numbers.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T08:00:14.311Z",
               "EditorCaption": ""
