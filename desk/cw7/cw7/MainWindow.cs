@@ -62,5 +62,15 @@ namespace cw7
         {
             repo.SaveToFile();
         }
+
+        private void dgvPeople_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Double click");
+        }
+
+        private void dgvPeople_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            MessageBox.Show("Row header double click");
+        }
     }
 }

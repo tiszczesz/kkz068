@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnSave = new Button();
             btnDelete = new Button();
             btnAddPerson = new Button();
             btnLoad = new Button();
             dgvPeople = new DataGridView();
-            btnSave = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeople).BeginInit();
             SuspendLayout();
@@ -50,6 +50,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(168, 568);
             panel1.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(12, 177);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(133, 46);
+            btnSave.TabIndex = 3;
+            btnSave.Text = "Zapisz do pliku";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -92,16 +102,8 @@
             dgvPeople.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPeople.Size = new Size(838, 568);
             dgvPeople.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(12, 177);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(133, 46);
-            btnSave.TabIndex = 3;
-            btnSave.Text = "Zapisz do pliku";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            dgvPeople.RowHeaderMouseDoubleClick += dgvPeople_RowHeaderMouseDoubleClick;
+            dgvPeople.DoubleClick += dgvPeople_DoubleClick;
             // 
             // MainWindow
             // 

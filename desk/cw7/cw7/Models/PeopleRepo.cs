@@ -26,7 +26,7 @@ namespace cw7.Models
 
         public void SaveToFile(string pathFile = "people.json")
         {
-            string content = JsonSerializer.Serialize(People);  
+            string content = JsonSerializer.Serialize(People,new JsonSerializerOptions { WriteIndented=true});  
             File.WriteAllText(pathFile, content);
         }
     }
