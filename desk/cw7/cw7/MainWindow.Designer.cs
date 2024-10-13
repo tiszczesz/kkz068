@@ -33,6 +33,7 @@
             btnAddPerson = new Button();
             btnLoad = new Button();
             dgvPeople = new DataGridView();
+            btnSave = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeople).BeginInit();
             SuspendLayout();
@@ -40,6 +41,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(btnSave);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnAddPerson);
             panel1.Controls.Add(btnLoad);
@@ -91,6 +93,16 @@
             dgvPeople.Size = new Size(838, 568);
             dgvPeople.TabIndex = 1;
             // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(12, 177);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(133, 46);
+            btnSave.TabIndex = 3;
+            btnSave.Text = "Zapisz do pliku";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -112,5 +124,6 @@
         private Button btnLoad;
         private Button btnAddPerson;
         private Button btnDelete;
+        private Button btnSave;
     }
 }

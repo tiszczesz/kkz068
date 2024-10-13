@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace cw7.Models
 {
@@ -21,6 +22,12 @@ namespace cw7.Models
                 return 0;
             }
             return People.Max(p => p.Id);
+        }
+
+        public void SaveToFile(string pathFile = "people.json")
+        {
+            string content = JsonSerializer.Serialize(People);  
+            File.WriteAllText(pathFile, content);
         }
     }
 }

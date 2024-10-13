@@ -18,7 +18,7 @@ namespace cw7
             repo = new PeopleRepo();
             var people = repo.People;
             RefreshData();
-            
+
             dgvPeople.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -43,19 +43,24 @@ namespace cw7
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dgvPeople.SelectedRows.Count == 0)
+            if (dgvPeople.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Wybierz wiersz do usuniêcia");
                 return;
             }
             Person toRemove = (Person)dgvPeople.SelectedRows[0]
                       .DataBoundItem;
-            if(toRemove != null)
+            if (toRemove != null)
             {
                 repo.People.Remove(toRemove);
                 RefreshData();
             }
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            repo.SaveToFile();
         }
     }
 }
