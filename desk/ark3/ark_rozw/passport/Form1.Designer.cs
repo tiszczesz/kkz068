@@ -35,11 +35,12 @@ partial class Form1
         tbFirstname = new TextBox();
         tbLastname = new TextBox();
         groupBox1 = new GroupBox();
-        radioButton1 = new RadioButton();
-        radioButton2 = new RadioButton();
         radioButton3 = new RadioButton();
+        radioButton2 = new RadioButton();
+        radioButton1 = new RadioButton();
         pb1 = new PictureBox();
         pb2 = new PictureBox();
+        button1 = new Button();
         groupBox1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pb2).BeginInit();
@@ -104,29 +105,7 @@ partial class Form1
         groupBox1.Size = new Size(250, 177);
         groupBox1.TabIndex = 6;
         groupBox1.TabStop = false;
-        groupBox1.Text = "groupBox1";
-        // 
-        // radioButton1
-        // 
-        radioButton1.AutoSize = true;
-        radioButton1.Location = new Point(29, 47);
-        radioButton1.Name = "radioButton1";
-        radioButton1.Size = new Size(99, 24);
-        radioButton1.TabIndex = 0;
-        radioButton1.TabStop = true;
-        radioButton1.Text = "niebiedkie";
-        radioButton1.UseVisualStyleBackColor = true;
-        // 
-        // radioButton2
-        // 
-        radioButton2.AutoSize = true;
-        radioButton2.Location = new Point(29, 91);
-        radioButton2.Name = "radioButton2";
-        radioButton2.Size = new Size(78, 24);
-        radioButton2.TabIndex = 1;
-        radioButton2.TabStop = true;
-        radioButton2.Text = "zielone";
-        radioButton2.UseVisualStyleBackColor = true;
+        groupBox1.Text = "Kolor oczu";
         // 
         // radioButton3
         // 
@@ -139,12 +118,35 @@ partial class Form1
         radioButton3.Text = "piwne";
         radioButton3.UseVisualStyleBackColor = true;
         // 
+        // radioButton2
+        // 
+        radioButton2.AutoSize = true;
+        radioButton2.Location = new Point(29, 91);
+        radioButton2.Name = "radioButton2";
+        radioButton2.Size = new Size(78, 24);
+        radioButton2.TabIndex = 1;
+        radioButton2.TabStop = true;
+        radioButton2.Text = "zielone";
+        radioButton2.UseVisualStyleBackColor = true;
+        // 
+        // radioButton1
+        // 
+        radioButton1.AutoSize = true;
+        radioButton1.Location = new Point(29, 47);
+        radioButton1.Name = "radioButton1";
+        radioButton1.Size = new Size(99, 24);
+        radioButton1.TabIndex = 0;
+        radioButton1.TabStop = true;
+        radioButton1.Text = "niebiedkie";
+        radioButton1.UseVisualStyleBackColor = true;
+        // 
         // pb1
         // 
         pb1.Image = Properties.Resources._000_zdjecie;
         pb1.Location = new Point(365, 53);
         pb1.Name = "pb1";
         pb1.Size = new Size(199, 242);
+        pb1.SizeMode = PictureBoxSizeMode.StretchImage;
         pb1.TabIndex = 7;
         pb1.TabStop = false;
         // 
@@ -158,11 +160,22 @@ partial class Form1
         pb2.TabIndex = 8;
         pb2.TabStop = false;
         // 
+        // button1
+        // 
+        button1.Location = new Point(365, 315);
+        button1.Name = "button1";
+        button1.Size = new Size(391, 49);
+        button1.TabIndex = 9;
+        button1.Text = "OK";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(button1);
         Controls.Add(pb2);
         Controls.Add(pb1);
         Controls.Add(groupBox1);
@@ -196,4 +209,5 @@ partial class Form1
     private RadioButton radioButton1;
     private PictureBox pb1;
     private PictureBox pb2;
+    private Button button1;
 }
