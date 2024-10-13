@@ -26,6 +26,11 @@ namespace cw7
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
+            if(repo == null || repo?.People==null)
+            {
+                MessageBox.Show("Pobierz dane z pliku");
+                return;
+            }
             var addForm = new FormAddNew(this);
             addForm.ShowDialog();            
         }
