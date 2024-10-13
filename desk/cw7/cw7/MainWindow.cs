@@ -18,7 +18,7 @@ namespace cw7
             repo = new PeopleRepo();
             var people = repo.People;
             RefreshData();
-            dgvPeople.Columns["Id"].Visible = false;
+            
             dgvPeople.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -26,18 +26,36 @@ namespace cw7
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            if(repo == null || repo?.People==null)
+            if (repo == null || repo?.People == null)
             {
                 MessageBox.Show("Pobierz dane z pliku");
                 return;
             }
             var addForm = new FormAddNew(this);
-            addForm.ShowDialog();            
+            addForm.ShowDialog();
         }
         public void RefreshData()
         {
             dgvPeople.DataSource = null;
             dgvPeople.DataSource = repo.People;
+            dgvPeople.Columns["Id"].Visible = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(dgvPeople.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Wybierz wiersz do usuniêcia");
+                return;
+            }
+            Person toRemove = (Person)dgvPeople.SelectedRows[0]
+                      .DataBoundItem;
+            if(toRemove != null)
+            {
+                repo.People.Remove(toRemove);
+                RefreshData();
+            }
+
         }
     }
 }

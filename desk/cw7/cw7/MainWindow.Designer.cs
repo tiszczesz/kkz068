@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnDelete = new Button();
             btnAddPerson = new Button();
             btnLoad = new Button();
             dgvPeople = new DataGridView();
-            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeople).BeginInit();
             SuspendLayout();
@@ -40,7 +40,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnAddPerson);
             panel1.Controls.Add(btnLoad);
             panel1.Dock = DockStyle.Left;
@@ -48,6 +48,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(168, 568);
             panel1.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(12, 125);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(133, 46);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Usuń  kontakt";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnAddPerson
             // 
@@ -81,15 +91,6 @@
             dgvPeople.Size = new Size(838, 568);
             dgvPeople.TabIndex = 1;
             // 
-            // button1
-            // 
-            button1.Location = new Point(12, 125);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 46);
-            button1.TabIndex = 2;
-            button1.Text = "Usuń  kontakt";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -110,6 +111,6 @@
         private DataGridView dgvPeople;
         private Button btnLoad;
         private Button btnAddPerson;
-        private Button button1;
+        private Button btnDelete;
     }
 }
