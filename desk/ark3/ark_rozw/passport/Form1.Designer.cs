@@ -41,6 +41,7 @@ partial class Form1
         pb1 = new PictureBox();
         pb2 = new PictureBox();
         button1 = new Button();
+        button2 = new Button();
         groupBox1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pb2).BeginInit();
@@ -164,17 +165,28 @@ partial class Form1
         // 
         button1.Location = new Point(365, 315);
         button1.Name = "button1";
-        button1.Size = new Size(391, 49);
+        button1.Size = new Size(391, 35);
         button1.TabIndex = 9;
         button1.Text = "OK";
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
+        // 
+        // button2
+        // 
+        button2.Location = new Point(365, 366);
+        button2.Name = "button2";
+        button2.Size = new Size(391, 35);
+        button2.TabIndex = 10;
+        button2.Text = "Sprawdź PESEL";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += button2_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(pb2);
         Controls.Add(pb1);
@@ -210,4 +222,5 @@ partial class Form1
     private PictureBox pb1;
     private PictureBox pb2;
     private Button button1;
+    private Button button2;
 }

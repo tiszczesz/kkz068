@@ -28,12 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormPESEL";
+            textBox1 = new TextBox();
+            button1 = new Button();
+            SuspendLayout();
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(57, 29);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(392, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(57, 91);
+            button1.Name = "button1";
+            button1.Size = new Size(392, 29);
+            button1.TabIndex = 1;
+            button1.Text = "Sprawdź PESEL";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // FormPESEL
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(520, 209);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
+            Name = "FormPESEL";
+            Text = "FormPESEL";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox textBox1;
+        private Button button1;
     }
 }

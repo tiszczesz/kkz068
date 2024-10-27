@@ -49,11 +49,18 @@ public partial class Form1 : Form
         {
             eyes = "piwne";
         }
-        if(firstname.Length==0 || lastname.Length==0 || number.Length == 0)
+        if (firstname.Length == 0 ||
+            lastname.Length == 0 ||
+            number.Length == 0)
         {
             MessageBox.Show("Wype³nij wszystkie pola");
             return;
         }
         MessageBox.Show($"Witaj {firstname} {lastname}. Masz {eyes} oczy.");
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        new FormPESEL().ShowDialog();
     }
 }
