@@ -40,20 +40,26 @@
             oProgramieToolStripMenuItem = new ToolStripMenuItem();
             dodatkoweInformacjeToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            btnSearch = new Button();
+            tbSearch = new TextBox();
+            lbConsonants = new Label();
+            lbVowels = new Label();
+            lbLetters = new Label();
+            lbChars = new Label();
+            lbLines = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             tbEdit = new TextBox();
             openFileDialog1 = new OpenFileDialog();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            lbLines = new Label();
-            lbChars = new Label();
-            lbLetter = new Label();
-            lbVowels = new Label();
-            lbConsonants = new Label();
+            saveFileDialog1 = new SaveFileDialog();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -90,6 +96,7 @@
             zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
             zapiszToolStripMenuItem.Size = new Size(112, 22);
             zapiszToolStripMenuItem.Text = "Zapisz";
+            zapiszToolStripMenuItem.Click += zapiszToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -129,9 +136,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnSearch);
+            panel1.Controls.Add(tbSearch);
             panel1.Controls.Add(lbConsonants);
             panel1.Controls.Add(lbVowels);
-            panel1.Controls.Add(lbLetter);
+            panel1.Controls.Add(lbLetters);
             panel1.Controls.Add(lbChars);
             panel1.Controls.Add(lbLines);
             panel1.Controls.Add(label5);
@@ -142,58 +151,65 @@
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(600, 24);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 426);
+            panel1.Size = new Size(200, 404);
             panel1.TabIndex = 1;
             // 
-            // tbEdit
+            // btnSearch
             // 
-            tbEdit.Dock = DockStyle.Fill;
-            tbEdit.Location = new Point(0, 24);
-            tbEdit.Multiline = true;
-            tbEdit.Name = "tbEdit";
-            tbEdit.Size = new Size(600, 426);
-            tbEdit.TabIndex = 2;
+            btnSearch.Location = new Point(29, 239);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(121, 23);
+            btnSearch.TabIndex = 11;
+            btnSearch.Text = "Szukaj";
+            btnSearch.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
+            // tbSearch
             // 
-            openFileDialog1.FileName = "openFileDialog1";
-            openFileDialog1.Filter = "pliki tekstowe|*.txt|Wszystkie pliki|*.*";
+            tbSearch.Location = new Point(30, 197);
+            tbSearch.Name = "tbSearch";
+            tbSearch.PlaceholderText = "szukane słowo";
+            tbSearch.Size = new Size(120, 23);
+            tbSearch.TabIndex = 10;
             // 
-            // label1
+            // lbConsonants
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ilość lini:";
+            lbConsonants.AutoSize = true;
+            lbConsonants.Location = new Point(106, 162);
+            lbConsonants.Name = "lbConsonants";
+            lbConsonants.Size = new Size(0, 15);
+            lbConsonants.TabIndex = 9;
             // 
-            // label2
+            // lbVowels
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(16, 60);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 15);
-            label2.TabIndex = 1;
-            label2.Text = "ilość znaków:";
+            lbVowels.AutoSize = true;
+            lbVowels.Location = new Point(106, 128);
+            lbVowels.Name = "lbVowels";
+            lbVowels.Size = new Size(0, 15);
+            lbVowels.TabIndex = 8;
             // 
-            // label3
+            // lbLetters
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(36, 94);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 15);
-            label3.TabIndex = 2;
-            label3.Text = "ilość liter:";
+            lbLetters.AutoSize = true;
+            lbLetters.Location = new Point(106, 94);
+            lbLetters.Name = "lbLetters";
+            lbLetters.Size = new Size(0, 15);
+            lbLetters.TabIndex = 7;
             // 
-            // label4
+            // lbChars
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(23, 128);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 15);
-            label4.TabIndex = 3;
-            label4.Text = "samogłoski:";
+            lbChars.AutoSize = true;
+            lbChars.Location = new Point(106, 60);
+            lbChars.Name = "lbChars";
+            lbChars.Size = new Size(0, 15);
+            lbChars.TabIndex = 6;
+            // 
+            // lbLines
+            // 
+            lbLines.AutoSize = true;
+            lbLines.Location = new Point(106, 26);
+            lbLines.Name = "lbLines";
+            lbLines.Size = new Size(0, 15);
+            lbLines.TabIndex = 5;
             // 
             // label5
             // 
@@ -204,50 +220,75 @@
             label5.TabIndex = 4;
             label5.Text = "spółgłoski:";
             // 
-            // lbLines
+            // label4
             // 
-            lbLines.AutoSize = true;
-            lbLines.Location = new Point(106, 26);
-            lbLines.Name = "lbLines";
-            lbLines.Size = new Size(38, 15);
-            lbLines.TabIndex = 5;
-            lbLines.Text = "label6";
+            label4.AutoSize = true;
+            label4.Location = new Point(23, 128);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 15);
+            label4.TabIndex = 3;
+            label4.Text = "samogłoski:";
             // 
-            // lbChars
+            // label3
             // 
-            lbChars.AutoSize = true;
-            lbChars.Location = new Point(106, 60);
-            lbChars.Name = "lbChars";
-            lbChars.Size = new Size(38, 15);
-            lbChars.TabIndex = 6;
-            lbChars.Text = "label7";
+            label3.AutoSize = true;
+            label3.Location = new Point(36, 94);
+            label3.Name = "label3";
+            label3.Size = new Size(57, 15);
+            label3.TabIndex = 2;
+            label3.Text = "ilość liter:";
             // 
-            // lbLetter
+            // label2
             // 
-            lbLetter.AutoSize = true;
-            lbLetter.Location = new Point(106, 94);
-            lbLetter.Name = "lbLetter";
-            lbLetter.Size = new Size(38, 15);
-            lbLetter.TabIndex = 7;
-            lbLetter.Text = "label8";
+            label2.AutoSize = true;
+            label2.Location = new Point(16, 60);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 15);
+            label2.TabIndex = 1;
+            label2.Text = "ilość znaków:";
             // 
-            // lbVowels
+            // label1
             // 
-            lbVowels.AutoSize = true;
-            lbVowels.Location = new Point(106, 128);
-            lbVowels.Name = "lbVowels";
-            lbVowels.Size = new Size(38, 15);
-            lbVowels.TabIndex = 8;
-            lbVowels.Text = "label9";
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 15);
+            label1.TabIndex = 0;
+            label1.Text = "ilość lini:";
             // 
-            // lbConsonants
+            // tbEdit
             // 
-            lbConsonants.AutoSize = true;
-            lbConsonants.Location = new Point(106, 162);
-            lbConsonants.Name = "lbConsonants";
-            lbConsonants.Size = new Size(44, 15);
-            lbConsonants.TabIndex = 9;
-            lbConsonants.Text = "label10";
+            tbEdit.Dock = DockStyle.Fill;
+            tbEdit.Location = new Point(0, 24);
+            tbEdit.Multiline = true;
+            tbEdit.Name = "tbEdit";
+            tbEdit.Size = new Size(600, 404);
+            tbEdit.TabIndex = 2;
+            tbEdit.TextChanged += tbEdit_TextChanged;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Filter = "pliki tekstowe|*.txt|Wszystkie pliki|*.*";
+            // 
+            // saveFileDialog1
+            // 
+            saveFileDialog1.DefaultExt = "txt";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(69, 17);
+            toolStripStatusLabel1.Text = "niezapisano";
             // 
             // Form1
             // 
@@ -256,6 +297,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tbEdit);
             Controls.Add(panel1);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             Name = "Form1";
             Text = "Form1";
@@ -263,6 +305,8 @@
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,7 +329,7 @@
         private OpenFileDialog openFileDialog1;
         private Label lbConsonants;
         private Label lbVowels;
-        private Label lbLetter;
+        private Label lbLetters;
         private Label lbChars;
         private Label lbLines;
         private Label label5;
@@ -293,5 +337,10 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private TextBox tbSearch;
+        private Button btnSearch;
+        private SaveFileDialog saveFileDialog1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
