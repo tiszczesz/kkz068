@@ -19,10 +19,12 @@ public partial class Form1 : Form
         fillComboBoxItems();
 
     }
-    private void fillDataGridView()
+    private void fillDataGridView(int columnId=-1)
     {
         dataGridView1.DataSource = null;
-        dataGridView1.DataSource = _repo.GetMovies();
+        dataGridView1.DataSource = columnId==-1 
+            ? _repo.GetMovies():
+            _repo.GetMoviesWithSort(columnId);
         dataGridView1.Columns["Id"].Visible = false;
     }
 
@@ -158,8 +160,6 @@ public partial class Form1 : Form
         var columnId = (cbHeader.SelectedItem as ComboBoxItem)?.ColumnId;
         if (columnId == null)
             return;
-        dataGridView1.DataSource = null;
-        dataGridView1.DataSource = _repo.GetMoviesWithSort(columnId);
-        dataGridView1.Columns["Id"].Visible = false;
+        fillDataGridView((int)columnId);
     }
 }
