@@ -37,6 +37,7 @@ partial class Form1
         tbTitle = new TextBox();
         btnShow = new Button();
         sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
+        btnDeletMovie = new Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         panelAdd.SuspendLayout();
         SuspendLayout();
@@ -85,6 +86,7 @@ partial class Form1
         tbPrice.PlaceholderText = "podaj cenę";
         tbPrice.Size = new Size(211, 23);
         tbPrice.TabIndex = 3;
+        tbPrice.KeyPress += tbPrice_KeyPress;
         // 
         // dataYear
         // 
@@ -128,11 +130,22 @@ partial class Form1
         sqliteCommand1.Transaction = null;
         sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
         // 
+        // btnDeletMovie
+        // 
+        btnDeletMovie.Location = new Point(620, 337);
+        btnDeletMovie.Name = "btnDeletMovie";
+        btnDeletMovie.Size = new Size(262, 47);
+        btnDeletMovie.TabIndex = 3;
+        btnDeletMovie.Text = "Usuń film";
+        btnDeletMovie.UseVisualStyleBackColor = true;
+        btnDeletMovie.Click += btnDeletMovie_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1270, 450);
+        Controls.Add(btnDeletMovie);
         Controls.Add(btnShow);
         Controls.Add(panelAdd);
         Controls.Add(dataGridView1);
@@ -156,4 +169,5 @@ partial class Form1
     private TextBox tbPrice;
     private Button btnSave;
     private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
+    private Button btnDeletMovie;
 }

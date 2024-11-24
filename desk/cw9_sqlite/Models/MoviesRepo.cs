@@ -36,5 +36,29 @@ namespace cw9_sqlite.Models
             conn.Close();
             return movies;
         }
+
+        public void AddMovie(Movie movie)
+        {
+            using SqliteConnection conn = new SqliteConnection(_connectionString);
+            SqliteCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "INSERT INTO Movies (title, director, year, price) "
+                                 +" VALUES (@title, @director, @year, @price)";
+            cmd.Parameters.AddWithValue("@title", movie.Title);
+            cmd.Parameters.AddWithValue("@director", movie.Director);
+            cmd.Parameters.AddWithValue("@year", movie.Year);
+            cmd.Parameters.AddWithValue("@price", movie.Price);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void RemoveMovie(int id) {
+            using SqliteConnection conn = new SqliteConnection(_connectionString);
+            SqliteCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM Movies WHERE Id=@movieId";                                
+            cmd.Parameters.AddWithValue("@movieId", id);       
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
