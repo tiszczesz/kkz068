@@ -76,5 +76,30 @@ namespace cw9_sqlite.Models
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        public List<Movie> GetMoviesWithSort(int? columnId)
+        {
+            if (columnId == null)
+                return GetMovies();
+            var movies = new List<Movie>();
+            using SqliteConnection conn = new SqliteConnection(_connectionString);
+            SqliteCommand cmd = conn.CreateCommand();
+            cmd.CommandText = $"SELECT * FROM Movies ORDER BY {columnId+1}";
+            conn.Open();
+            SqliteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                movies.Add(new Movie
+                {
+                    Id = reader.GetInt32("id"),
+                    Title = reader.GetString("title"),
+                    Director = reader.GetString("director"),
+                    Year = reader.GetInt32("year"),
+                    Price = reader.GetDecimal("price")
+                });
+            }
+            conn.Close();
+            return movies;
+        }
     }
 }

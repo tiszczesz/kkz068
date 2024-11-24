@@ -14,9 +14,35 @@ public partial class Form1 : Form
     private void Form1_Load(object sender, EventArgs e)
     {
         //panelAdd.Visible = false;
+       fillDataGridView();
+        //var columns = dataGridView1.Columns;
+        fillComboBoxItems();
+
+    }
+    private void fillDataGridView()
+    {
+        dataGridView1.DataSource = null;
         dataGridView1.DataSource = _repo.GetMovies();
         dataGridView1.Columns["Id"].Visible = false;
-        //var columns = dataGridView1.Columns;
+    }
+
+    private void fillComboBoxItems()
+    {
+        for (int i = 1; i < dataGridView1.Columns.Count; i++)
+        {
+          
+            cbHeader.Items.Add(new ComboBoxItem
+            {
+                ColumnId = i,
+                HeaderText = dataGridView1.Columns[i].HeaderText,
+                ColumnName = dataGridView1.Columns[i].DataPropertyName
+            });
+
+        }
+        cbHeader.DisplayMember = "HeaderText";
+        cbHeader.ValueMember = "ColumnId";
+        cbHeader.SelectedIndex = 0;
+
     }
 
     private void btnShow_Click(object sender, EventArgs e)
@@ -39,12 +65,11 @@ public partial class Form1 : Form
         var movie = getMovieFromForm();
         if (movie != null)
         {
-            if (_isEditMode)            
-                _repo.UpdateMovie(movie);            
+            if (_isEditMode)
+                _repo.UpdateMovie(movie);
             else
-                _repo.AddMovie(movie);            
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = _repo.GetMovies();
+                _repo.AddMovie(movie);
+           fillDataGridView();
             panelAdd.Visible = false;
             btnShow.Text = "Poka¿";
             tbTitle.Text = "";
@@ -67,7 +92,7 @@ public partial class Form1 : Form
         return new Movie
         {
             Id = _isEditMode ? (int)dataGridView1.SelectedRows[0].Cells["Id"].Value : 0,
-           // Id = _isEditMode ? Convert.ToInt32(lbId.Text) : 0,
+            // Id = _isEditMode ? Convert.ToInt32(lbId.Text) : 0,
             Title = tbTitle.Text,
             Director = tbDirector.Text,
             Year = Convert.ToInt32(dataYear.Text),
@@ -93,8 +118,7 @@ public partial class Form1 : Form
         }
         var id = (int)dataGridView1.SelectedRows[0].Cells["Id"].Value;
         _repo.RemoveMovie(id);
-        dataGridView1.DataSource = null;
-        dataGridView1.DataSource = _repo.GetMovies();
+        fillDataGridView();
 
         //Movie? movieToDelete = dataGridView1.SelectedRows[0].DataBoundItem as Movie;
         //if(movieToDelete != null)
@@ -118,12 +142,24 @@ public partial class Form1 : Form
                 lbId.Text = movie.Id.ToString();
                 tbTitle.Text = movie.Title;
                 tbDirector.Text = movie.Director;
-                var date = movie.Year;                
+                var date = movie.Year;
                 dataYear.Value = new DateTime(date, 1, 1);
 
                 tbPrice.Text = movie.Price.ToString();
                 _isEditMode = true;
             }
         }
+    }
+
+    private void btnSort_Click(object sender, EventArgs e)
+    {
+        //MessageBox.Show($"value: {(cbHeader.SelectedItem as ComboBoxItem)?.ColumnId}" );
+
+        var columnId = (cbHeader.SelectedItem as ComboBoxItem)?.ColumnId;
+        if (columnId == null)
+            return;
+        dataGridView1.DataSource = null;
+        dataGridView1.DataSource = _repo.GetMoviesWithSort(columnId);
+        dataGridView1.Columns["Id"].Visible = false;
     }
 }

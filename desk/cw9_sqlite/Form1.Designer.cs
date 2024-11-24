@@ -39,6 +39,8 @@ partial class Form1
         btnShow = new Button();
         sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
         btnDeletMovie = new Button();
+        cbHeader = new ComboBox();
+        btnSort = new Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         panelAdd.SuspendLayout();
         SuspendLayout();
@@ -153,11 +155,32 @@ partial class Form1
         btnDeletMovie.UseVisualStyleBackColor = true;
         btnDeletMovie.Click += btnDeletMovie_Click;
         // 
+        // cbHeader
+        // 
+        cbHeader.DropDownStyle = ComboBoxStyle.DropDownList;
+        cbHeader.FormattingEnabled = true;
+        cbHeader.Location = new Point(629, 380);
+        cbHeader.Name = "cbHeader";
+        cbHeader.Size = new Size(172, 23);
+        cbHeader.TabIndex = 4;
+        // 
+        // btnSort
+        // 
+        btnSort.Location = new Point(807, 379);
+        btnSort.Name = "btnSort";
+        btnSort.Size = new Size(75, 23);
+        btnSort.TabIndex = 5;
+        btnSort.Text = "Sortuj";
+        btnSort.UseVisualStyleBackColor = true;
+        btnSort.Click += btnSort_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1270, 450);
+        Controls.Add(btnSort);
+        Controls.Add(cbHeader);
         Controls.Add(btnDeletMovie);
         Controls.Add(btnShow);
         Controls.Add(panelAdd);
@@ -184,4 +207,6 @@ partial class Form1
     private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
     private Button btnDeletMovie;
     private Label lbId;
+    private ComboBox cbHeader;
+    private Button btnSort;
 }
