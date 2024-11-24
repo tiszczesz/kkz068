@@ -5,6 +5,7 @@ namespace cw9_sqlite;
 public partial class Form1 : Form
 {
     private MoviesRepo _repo = new MoviesRepo();
+    private bool _isEditMode = false;
     public Form1()
     {
         InitializeComponent();
@@ -25,6 +26,7 @@ public partial class Form1 : Form
         {
             btnShow.Text = "Poka¿";
             panelAdd.Visible = false;
+            _isEditMode = false;
         }
         else
         {
@@ -115,6 +117,7 @@ public partial class Form1 : Form
                 dataYear.Value = new DateTime(date, 1, 1);
 
                 tbPrice.Text = movie.Price.ToString();
+                _isEditMode = true;
             }
         }
     }
