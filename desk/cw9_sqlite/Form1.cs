@@ -66,6 +66,8 @@ public partial class Form1 : Form
         }
         return new Movie
         {
+            Id = _isEditMode ? (int)dataGridView1.SelectedRows[0].Cells["Id"].Value : 0,
+           // Id = _isEditMode ? Convert.ToInt32(lbId.Text) : 0,
             Title = tbTitle.Text,
             Director = tbDirector.Text,
             Year = Convert.ToInt32(dataYear.Text),
@@ -113,6 +115,7 @@ public partial class Form1 : Form
             Movie? movie = dataGridView1.SelectedRows[0].DataBoundItem as Movie;
             if (movie != null)
             {
+                lbId.Text = movie.Id.ToString();
                 tbTitle.Text = movie.Title;
                 tbDirector.Text = movie.Director;
                 var date = movie.Year;                

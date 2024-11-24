@@ -30,6 +30,7 @@ partial class Form1
     {
         dataGridView1 = new DataGridView();
         panelAdd = new Panel();
+        lbId = new Label();
         btnSave = new Button();
         tbPrice = new TextBox();
         dataYear = new DateTimePicker();
@@ -58,6 +59,7 @@ partial class Form1
         // panelAdd
         // 
         panelAdd.BackColor = Color.FromArgb(255, 255, 192);
+        panelAdd.Controls.Add(lbId);
         panelAdd.Controls.Add(btnSave);
         panelAdd.Controls.Add(tbPrice);
         panelAdd.Controls.Add(dataYear);
@@ -68,6 +70,16 @@ partial class Form1
         panelAdd.Size = new Size(262, 245);
         panelAdd.TabIndex = 1;
         panelAdd.Visible = false;
+        // 
+        // lbId
+        // 
+        lbId.AutoSize = true;
+        lbId.Location = new Point(143, 51);
+        lbId.Name = "lbId";
+        lbId.Size = new Size(38, 15);
+        lbId.TabIndex = 5;
+        lbId.Text = "label1";
+        lbId.Visible = false;
         // 
         // btnSave
         // 
@@ -116,7 +128,7 @@ partial class Form1
         // 
         // btnShow
         // 
-        btnShow.Location = new Point(620, 273);
+        btnShow.Location = new Point(620, 263);
         btnShow.Name = "btnShow";
         btnShow.Size = new Size(262, 47);
         btnShow.TabIndex = 2;
@@ -133,7 +145,7 @@ partial class Form1
         // 
         // btnDeletMovie
         // 
-        btnDeletMovie.Location = new Point(620, 337);
+        btnDeletMovie.Location = new Point(620, 316);
         btnDeletMovie.Name = "btnDeletMovie";
         btnDeletMovie.Size = new Size(262, 47);
         btnDeletMovie.TabIndex = 3;
@@ -171,4 +183,5 @@ partial class Form1
     private Button btnSave;
     private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
     private Button btnDeletMovie;
+    private Label lbId;
 }

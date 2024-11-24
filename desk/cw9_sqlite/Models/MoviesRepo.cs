@@ -61,9 +61,20 @@ namespace cw9_sqlite.Models
             conn.Close();
         }
 
-        internal void UpdateMovie(Movie movie)
+        public void UpdateMovie(Movie movie)
         {
-            throw new NotImplementedException();
+            using SqliteConnection conn = new SqliteConnection(_connectionString);
+            SqliteCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "UPDATE Movies SET title=@title, "
+                +"director=@director, year=@year, price=@price WHERE Id=@movieId";
+            cmd.Parameters.AddWithValue("@title", movie.Title);
+            cmd.Parameters.AddWithValue("@director", movie.Director);
+            cmd.Parameters.AddWithValue("@year", movie.Year);
+            cmd.Parameters.AddWithValue("@price", movie.Price);
+            cmd.Parameters.AddWithValue("@movieId", movie.Id);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
