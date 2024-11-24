@@ -53,6 +53,7 @@ partial class Form1
         dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         dataGridView1.Size = new Size(571, 414);
         dataGridView1.TabIndex = 0;
+        dataGridView1.DoubleClick += dataGridView1_DoubleClick;
         // 
         // panelAdd
         // 
