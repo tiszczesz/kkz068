@@ -17,7 +17,6 @@ public partial class Form1 : Form
         dataGridView1.DataSource = _repo.GetMovies();
         dataGridView1.Columns["Id"].Visible = false;
         //var columns = dataGridView1.Columns;
-
     }
 
     private void btnShow_Click(object sender, EventArgs e)
@@ -26,12 +25,12 @@ public partial class Form1 : Form
         {
             btnShow.Text = "Poka¿";
             panelAdd.Visible = false;
-            _isEditMode = false;
         }
         else
         {
             btnShow.Text = "Ukryj";
             panelAdd.Visible = true;
+            _isEditMode = false;
         }
     }
 
@@ -40,7 +39,10 @@ public partial class Form1 : Form
         var movie = getMovieFromForm();
         if (movie != null)
         {
-            _repo.AddMovie(movie);
+            if (_isEditMode)            
+                _repo.UpdateMovie(movie);            
+            else
+                _repo.AddMovie(movie);            
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = _repo.GetMovies();
             panelAdd.Visible = false;

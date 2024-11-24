@@ -60,5 +60,10 @@ namespace cw9_sqlite.Models
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        internal void UpdateMovie(Movie movie)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
