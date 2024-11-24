@@ -1,0 +1,5 @@
+color: string
+width: int
+height: int
+opacity int (w procentach)
+platform: string
