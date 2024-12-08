@@ -14,16 +14,16 @@ public partial class Form1 : Form
     private void Form1_Load(object sender, EventArgs e)
     {
         //panelAdd.Visible = false;
-       fillDataGridView();
+        fillDataGridView();
         //var columns = dataGridView1.Columns;
         fillComboBoxItems();
 
     }
-    private void fillDataGridView(int columnId=-1)
+    private void fillDataGridView(int columnId = -1)
     {
         dataGridView1.DataSource = null;
-        dataGridView1.DataSource = columnId==-1 
-            ? _repo.GetMovies():
+        dataGridView1.DataSource = columnId == -1
+            ? _repo.GetMovies() :
             _repo.GetMoviesWithSort(columnId);
         dataGridView1.Columns["Id"].Visible = false;
     }
@@ -32,7 +32,7 @@ public partial class Form1 : Form
     {
         for (int i = 1; i < dataGridView1.Columns.Count; i++)
         {
-          
+
             cbHeader.Items.Add(new ComboBoxItem
             {
                 ColumnId = i,
@@ -71,7 +71,7 @@ public partial class Form1 : Form
                 _repo.UpdateMovie(movie);
             else
                 _repo.AddMovie(movie);
-           fillDataGridView();
+            fillDataGridView();
             panelAdd.Visible = false;
             btnShow.Text = "Poka¿";
             tbTitle.Text = "";
@@ -161,5 +161,10 @@ public partial class Form1 : Form
         if (columnId == null)
             return;
         fillDataGridView((int)columnId);
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        new FormByRecord().ShowDialog();
     }
 }

@@ -41,6 +41,7 @@ partial class Form1
         btnDeletMovie = new Button();
         cbHeader = new ComboBox();
         btnSort = new Button();
+        button1 = new Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         panelAdd.SuspendLayout();
         SuspendLayout();
@@ -174,11 +175,22 @@ partial class Form1
         btnSort.UseVisualStyleBackColor = true;
         btnSort.Click += btnSort_Click;
         // 
+        // button1
+        // 
+        button1.Location = new Point(954, 24);
+        button1.Name = "button1";
+        button1.Size = new Size(253, 63);
+        button1.TabIndex = 6;
+        button1.Text = "button1";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1270, 450);
+        Controls.Add(button1);
         Controls.Add(btnSort);
         Controls.Add(cbHeader);
         Controls.Add(btnDeletMovie);
@@ -209,4 +221,5 @@ partial class Form1
     private Label lbId;
     private ComboBox cbHeader;
     private Button btnSort;
+    private Button button1;
 }
