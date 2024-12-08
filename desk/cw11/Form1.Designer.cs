@@ -38,6 +38,7 @@
             lbBlue = new Label();
             lbOpacity = new Label();
             button1 = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar3).BeginInit();
@@ -135,11 +136,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label1.Location = new Point(404, 358);
+            label1.Name = "label1";
+            label1.Size = new Size(327, 128);
+            label1.TabIndex = 10;
+            label1.Text = "label1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1055, 625);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(lbOpacity);
             Controls.Add(lbBlue);
@@ -172,5 +184,6 @@
         private Label lbBlue;
         private Label lbOpacity;
         private Button button1;
+        private Label label1;
     }
 }
