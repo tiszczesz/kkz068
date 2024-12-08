@@ -4,9 +4,10 @@ namespace SongsApp
 {
     public partial class Form1 : Form
     {
-        private List<Song> songs;
+        private List<Song>? songs;
         private int currentSongIndex = 0;
-        private ISongRepo songRepo = new FileSongRepo();
+        // private ISongRepo songRepo = new FileSongRepo();
+        private ISongRepo songRepo = new SqliteSongRepo();
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +16,14 @@ namespace SongsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             songs = songRepo.GetAllSongs().ToList();
-            DisplayCurrentSong();
+            if (songs.Count > 0)
+            {
+                DisplayCurrentSong();
+            }
+            else {
+                MessageBox.Show("No songs found");
+            }
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -46,5 +54,23 @@ namespace SongsApp
             lbYear.Text = currentSong.Year.ToString();
             lbdownloadsNumber.Text = currentSong.DownloadNumber.ToString();
         }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            if(songs.Count > 0)
+            {
+                songs[currentSongIndex].DownloadNumber++;
+                DisplayCurrentSong();
+                if(songRepo is SqliteSongRepo)
+                {
+                    songRepo.UpdateSong(songs[currentSongIndex]);
+                }
+                else
+                {
+                    MessageBox.Show("Downloaded");
+                }
+            }
+        }
     }
+                
 }

@@ -142,6 +142,7 @@
             btnDownload.TabIndex = 8;
             btnDownload.Text = "Pobierz";
             btnDownload.UseVisualStyleBackColor = false;
+            btnDownload.Click += btnDownload_Click;
             // 
             // Form1
             // 
