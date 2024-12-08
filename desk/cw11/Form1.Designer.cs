@@ -37,6 +37,7 @@
             lbGreen = new Label();
             lbBlue = new Label();
             lbOpacity = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar3).BeginInit();
@@ -124,11 +125,22 @@
             lbOpacity.TabIndex = 8;
             lbOpacity.Text = "Opacity:";
             // 
+            // button1
+            // 
+            button1.Location = new Point(66, 358);
+            button1.Name = "button1";
+            button1.Size = new Size(259, 85);
+            button1.TabIndex = 9;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1055, 625);
+            Controls.Add(button1);
             Controls.Add(lbOpacity);
             Controls.Add(lbBlue);
             Controls.Add(lbGreen);
@@ -159,5 +171,6 @@
         private Label lbGreen;
         private Label lbBlue;
         private Label lbOpacity;
+        private Button button1;
     }
 }

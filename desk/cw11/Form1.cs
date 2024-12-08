@@ -31,13 +31,18 @@ namespace cw11
         {
             //Console.WriteLine(trackBar4.Value.ToString(), trackBar1.Value.ToString(), trackBar2.Value.ToString(), trackBar3.Value.ToString());
             panel1.BackColor = Color.FromArgb(trackBar4.Value, trackBar1.Value, trackBar2.Value, trackBar3.Value);
-            
+
         }
 
         private void trackBar4_ValueChanged(object sender, EventArgs e)
         {
             lbOpacity.Text = "Opacity: " + trackBar4.Value.ToString();
             panelBackgroundColorUpdate();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form2(this).ShowDialog();
         }
     }
 }
