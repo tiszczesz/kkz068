@@ -21,6 +21,7 @@ namespace SongsApp.Models
         public IEnumerable<Song> GetAllSongs()
         {
             var lines = System.IO.File.ReadAllLines("Files/Data.txt");
+            
             List<Song> songs = new List<Song>();
             for (int i = 0; i < lines.Length; i += 6)
             {
@@ -52,6 +53,21 @@ namespace SongsApp.Models
         public void UpdateSong(Song song)
         {
             throw new NotImplementedException();
+        }
+        public void SaveAllSongs(IEnumerable<Song> songs)
+        {
+            List<string> lines = new List<string>();
+            foreach (var song in songs)
+            {
+                lines.Add(song.Artist);
+                lines.Add(song.Album);
+                lines.Add(song.SongNumber.ToString());
+                lines.Add(song.Year.ToString());
+                lines.Add(song.DownloadNumber.ToString());
+                lines.Add("");
+            }
+            System.IO.File.WriteAllLines("Files/Data.txt", lines);
+
         }
     }
 }

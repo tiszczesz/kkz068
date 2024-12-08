@@ -33,7 +33,7 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             lbArtist = new Label();
-            lbTitle = new Label();
+            lbAlbum = new Label();
             lbSongsNumber = new Label();
             lbdownloadsNumber = new Label();
             lbYear = new Label();
@@ -57,7 +57,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1289, 175);
+            pictureBox2.Location = new Point(1290, 175);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 70);
             pictureBox2.TabIndex = 1;
@@ -84,16 +84,16 @@
             lbArtist.TabIndex = 3;
             lbArtist.Text = "Artist";
             // 
-            // lbTitle
+            // lbAlbum
             // 
-            lbTitle.AutoSize = true;
-            lbTitle.Font = new Font("Segoe UI", 30F, FontStyle.Italic, GraphicsUnit.Point, 238);
-            lbTitle.ForeColor = Color.White;
-            lbTitle.Location = new Point(400, 150);
-            lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(96, 54);
-            lbTitle.TabIndex = 4;
-            lbTitle.Text = "Title";
+            lbAlbum.AutoSize = true;
+            lbAlbum.Font = new Font("Segoe UI", 30F, FontStyle.Italic, GraphicsUnit.Point, 238);
+            lbAlbum.ForeColor = Color.White;
+            lbAlbum.Location = new Point(400, 150);
+            lbAlbum.Name = "lbAlbum";
+            lbAlbum.Size = new Size(96, 54);
+            lbAlbum.TabIndex = 4;
+            lbAlbum.Text = "Title";
             // 
             // lbSongsNumber
             // 
@@ -127,7 +127,6 @@
             lbYear.Size = new Size(61, 37);
             lbYear.TabIndex = 7;
             lbYear.Text = "Rok";
-           
             // 
             // btnDownload
             // 
@@ -155,7 +154,7 @@
             Controls.Add(lbYear);
             Controls.Add(lbdownloadsNumber);
             Controls.Add(lbSongsNumber);
-            Controls.Add(lbTitle);
+            Controls.Add(lbAlbum);
             Controls.Add(lbArtist);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -164,6 +163,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "MojeDźwięki, Wykonał: XXXXXXXX";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -178,7 +178,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Label lbArtist;
-        private Label lbTitle;
+        private Label lbAlbum;
         private Label lbSongsNumber;
         private Label lbdownloadsNumber;
         private Label lbYear;

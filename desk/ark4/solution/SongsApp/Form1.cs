@@ -6,8 +6,8 @@ namespace SongsApp
     {
         private List<Song>? songs;
         private int currentSongIndex = 0;
-        // private ISongRepo songRepo = new FileSongRepo();
-        private ISongRepo songRepo = new SqliteSongRepo();
+        private ISongRepo songRepo = new FileSongRepo();
+        //private ISongRepo songRepo = new SqliteSongRepo();
         public Form1()
         {
             InitializeComponent();
@@ -50,8 +50,8 @@ namespace SongsApp
         {
             Song currentSong = songs[currentSongIndex];
             lbArtist.Text = currentSong.Artist;
-            lbTitle.Text = currentSong.Album;
-            lbSongsNumber.Text = currentSong.SongNumber.ToString();
+            lbAlbum.Text = currentSong.Album;
+            lbSongsNumber.Text = currentSong.SongNumber.ToString() + " utworów";
             lbYear.Text = currentSong.Year.ToString();
             lbdownloadsNumber.Text = currentSong.DownloadNumber.ToString();
         }
@@ -73,7 +73,13 @@ namespace SongsApp
             }
         }
 
-    
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(songRepo is FileSongRepo)
+            {
+                (songRepo as FileSongRepo)?.SaveAllSongs(songs);
+            }
+        }
     }
 
 }
