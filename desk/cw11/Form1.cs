@@ -2,6 +2,7 @@ namespace cw11
 {
     public partial class Form1 : Form
     {
+        public Color color;
         public Form1()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace cw11
         private void panelBackgroundColorUpdate()
         {
             //Console.WriteLine(trackBar4.Value.ToString(), trackBar1.Value.ToString(), trackBar2.Value.ToString(), trackBar3.Value.ToString());
-            panel1.BackColor = Color.FromArgb(trackBar4.Value, trackBar1.Value, trackBar2.Value, trackBar3.Value);
-
+            color = Color.FromArgb(trackBar4.Value, trackBar1.Value, trackBar2.Value, trackBar3.Value);
+            panel1.BackColor = color;
         }
 
         private void trackBar4_ValueChanged(object sender, EventArgs e)
@@ -43,6 +44,10 @@ namespace cw11
         private void button1_Click(object sender, EventArgs e)
         {
             new Form2(this).ShowDialog();
+        }
+        public Label GetLabel()
+        {
+            return label1;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace cw11
         {
             if(colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                
+                var color = colorDialog1.Color; //todo
             }
         }
     }
