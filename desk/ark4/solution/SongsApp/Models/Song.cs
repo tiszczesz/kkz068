@@ -3,6 +3,7 @@
     public class Song
     {
         private static int nextId = 1;
+
         public Song()
         {
             Id = nextId++;

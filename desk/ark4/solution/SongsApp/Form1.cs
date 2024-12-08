@@ -20,10 +20,11 @@ namespace SongsApp
             {
                 DisplayCurrentSong();
             }
-            else {
+            else
+            {
                 MessageBox.Show("No songs found");
             }
-           
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -57,11 +58,11 @@ namespace SongsApp
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            if(songs.Count > 0)
+            if (songs.Count > 0)
             {
                 songs[currentSongIndex].DownloadNumber++;
                 DisplayCurrentSong();
-                if(songRepo is SqliteSongRepo)
+                if (songRepo is SqliteSongRepo)
                 {
                     songRepo.UpdateSong(songs[currentSongIndex]);
                 }
@@ -71,6 +72,8 @@ namespace SongsApp
                 }
             }
         }
+
+    
     }
-                
+
 }

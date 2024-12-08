@@ -127,6 +127,7 @@
             lbYear.Size = new Size(61, 37);
             lbYear.TabIndex = 7;
             lbYear.Text = "Rok";
+           
             // 
             // btnDownload
             // 
