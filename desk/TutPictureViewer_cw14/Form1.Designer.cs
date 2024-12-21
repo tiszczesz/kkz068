@@ -39,15 +39,35 @@
             label4 = new Label();
             label3 = new Label();
             pan2 = new Panel();
+            tabPage3 = new TabPage();
+            pan3 = new Panel();
+            tabPage4 = new TabPage();
+            button3 = new Button();
+            button2 = new Button();
+            nudYk = new NumericUpDown();
+            nudXk = new NumericUpDown();
+            nudYp = new NumericUpDown();
+            nudXp = new NumericUpDown();
+            button1 = new Button();
+            pan4 = new Panel();
+            colorDialog1 = new ColorDialog();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudYk).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudXk).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudYp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudXp).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -162,6 +182,116 @@
             pan2.TabIndex = 0;
             pan2.MouseMove += panel1_MouseMove;
             // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(pan3);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(792, 422);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Trzeci";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pan3
+            // 
+            pan3.Location = new Point(28, 25);
+            pan3.Name = "pan3";
+            pan3.Size = new Size(728, 361);
+            pan3.TabIndex = 0;
+            pan3.Paint += pan3_Paint;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(button3);
+            tabPage4.Controls.Add(button2);
+            tabPage4.Controls.Add(nudYk);
+            tabPage4.Controls.Add(nudXk);
+            tabPage4.Controls.Add(nudYp);
+            tabPage4.Controls.Add(nudXp);
+            tabPage4.Controls.Add(button1);
+            tabPage4.Controls.Add(pan4);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(792, 422);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "tabPage4";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(8, 210);
+            button3.Name = "button3";
+            button3.Size = new Size(187, 39);
+            button3.TabIndex = 7;
+            button3.Text = "Wyczyść panel";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(8, 109);
+            button2.Name = "button2";
+            button2.Size = new Size(187, 39);
+            button2.TabIndex = 6;
+            button2.Text = "Wybierz kolor";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // nudYk
+            // 
+            nudYk.Location = new Point(116, 60);
+            nudYk.Maximum = new decimal(new int[] { 400, 0, 0, 0 });
+            nudYk.Name = "nudYk";
+            nudYk.Size = new Size(79, 23);
+            nudYk.TabIndex = 5;
+            // 
+            // nudXk
+            // 
+            nudXk.Location = new Point(8, 60);
+            nudXk.Maximum = new decimal(new int[] { 400, 0, 0, 0 });
+            nudXk.Name = "nudXk";
+            nudXk.Size = new Size(79, 23);
+            nudXk.TabIndex = 4;
+            // 
+            // nudYp
+            // 
+            nudYp.Location = new Point(116, 31);
+            nudYp.Maximum = new decimal(new int[] { 400, 0, 0, 0 });
+            nudYp.Name = "nudYp";
+            nudYp.Size = new Size(79, 23);
+            nudYp.TabIndex = 3;
+            // 
+            // nudXp
+            // 
+            nudXp.Location = new Point(8, 31);
+            nudXp.Maximum = new decimal(new int[] { 400, 0, 0, 0 });
+            nudXp.Name = "nudXp";
+            nudXp.Size = new Size(79, 23);
+            nudXp.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(8, 154);
+            button1.Name = "button1";
+            button1.Size = new Size(187, 39);
+            button1.TabIndex = 1;
+            button1.Text = "Narysuj prostokąt";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // pan4
+            // 
+            pan4.BorderStyle = BorderStyle.FixedSingle;
+            pan4.Location = new Point(279, 19);
+            pan4.Name = "pan4";
+            pan4.Size = new Size(381, 363);
+            pan4.TabIndex = 0;
+            pan4.MouseDown += pan4_MouseDown;
+            pan4.MouseMove += pan4_MouseMove;
+            pan4.MouseUp += pan4_MouseUp;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -175,6 +305,12 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)nudYk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudXk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudYp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudXp).EndInit();
             ResumeLayout(false);
         }
 
@@ -191,5 +327,17 @@
         private Label label3;
         private Panel pan2;
         private Label label4;
+        private TabPage tabPage3;
+        private Panel pan3;
+        private TabPage tabPage4;
+        private NumericUpDown nudYp;
+        private NumericUpDown nudXp;
+        private Button button1;
+        private Panel pan4;
+        private NumericUpDown nudYk;
+        private NumericUpDown nudXk;
+        private Button button2;
+        private ColorDialog colorDialog1;
+        private Button button3;
     }
 }
