@@ -16,11 +16,11 @@ namespace cw13
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedItems.Count == 0)
+            if(listBox1.SelectedIndex == -1)
             {
                 return;
             }
-            string? selected = listBox1.SelectedItems[0]?.ToString();
+            string? selected = listBox1.SelectedItem?.ToString();
             switch (selected)
             {
                 case "Pies":
@@ -43,7 +43,11 @@ namespace cw13
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("Zapisana wizyta\n"+tbOwner.Text+", "+listBox1.SelectedItem?.ToString()+", "
+                    +tbVisit.Text+", "+dateTimePicker1.Value.ToShortTimeString());
+            lbInfo.Text = "Zapisana wizyta\n" + tbOwner.Text + ", " + listBox1.SelectedItem?.ToString() + ", "
+                    + tbVisit.Text + ", " + dateTimePicker1.Value.ToShortTimeString();
+
         }
     }
 }

@@ -37,6 +37,7 @@
             lbAge = new Label();
             tbVisit = new TextBox();
             button1 = new Button();
+            lbInfo = new Label();
             ((System.ComponentModel.ISupportInitialize)tracBarAge).BeginInit();
             SuspendLayout();
             // 
@@ -136,12 +137,23 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // lbInfo
+            // 
+            lbInfo.AutoEllipsis = true;
+            lbInfo.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 238);
+            lbInfo.Location = new Point(12, 447);
+            lbInfo.Name = "lbInfo";
+            lbInfo.Size = new Size(328, 172);
+            lbInfo.TabIndex = 10;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(352, 663);
+            Controls.Add(lbInfo);
             Controls.Add(button1);
             Controls.Add(tbVisit);
             Controls.Add(lbAge);
@@ -170,5 +182,6 @@
         private Label lbAge;
         private TextBox tbVisit;
         private Button button1;
+        private Label lbInfo;
     }
 }
