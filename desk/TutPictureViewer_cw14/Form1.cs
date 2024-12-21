@@ -95,6 +95,7 @@ namespace TutPictureViewer_cw14
                 Pen pen1 = new Pen(color, 3);
                 Brush brush1 = new SolidBrush(color);
                 g.FillRectangle(brush1,  e.Location.X,e.Location.Y,1,1);
+               // g.DrawLine(pen1, p1, p2);
             }
           
 
