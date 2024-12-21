@@ -50,6 +50,9 @@
             nudXp = new NumericUpDown();
             button1 = new Button();
             pan4 = new Panel();
+            tabPage5 = new TabPage();
+            panel1 = new Panel();
+            panel2 = new Panel();
             colorDialog1 = new ColorDialog();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -60,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)nudXk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudYp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudXp).BeginInit();
+            tabPage5.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -68,12 +73,14 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(800, 450);
             tabControl1.TabIndex = 0;
+            tabControl1.KeyPress += tabControl1_KeyPress;
             // 
             // tabPage1
             // 
@@ -292,6 +299,34 @@
             pan4.MouseMove += pan4_MouseMove;
             pan4.MouseUp += pan4_MouseUp;
             // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(panel1);
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(792, 422);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "tabPage5";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panel2);
+            panel1.Location = new Point(38, 70);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(651, 344);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.IndianRed;
+            panel2.Location = new Point(294, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(19, 18);
+            panel2.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -300,6 +335,7 @@
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Okienko główne";
+            KeyPress += Form1_KeyPress;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -311,6 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)nudXk).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudYp).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudXp).EndInit();
+            tabPage5.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -339,5 +377,8 @@
         private Button button2;
         private ColorDialog colorDialog1;
         private Button button3;
+        private TabPage tabPage5;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
