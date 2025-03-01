@@ -1,6 +1,9 @@
 package com.example.cw4_nwd
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val editA = findViewById<EditText>(R.id.editA)
+        val editB = findViewById<EditText>(R.id.editB)
+        val result = findViewById<TextView>(R.id.tvResult)
+        val btnRun = findViewById<Button>(R.id.btnRun)
+
+        result.text = "NWD(4,18) = ${nwd(4, 18)}"
     }
 }
