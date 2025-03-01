@@ -23,7 +23,16 @@ class MainActivity : AppCompatActivity() {
         val editB = findViewById<EditText>(R.id.editB)
         val result = findViewById<TextView>(R.id.tvResult)
         val btnRun = findViewById<Button>(R.id.btnRun)
+        btnRun.setOnClickListener {
+            try {
+                val a = editA.text.toString().toInt()
+                val b = editB.text.toString().toInt()
+                result.text = "NWD(4,18) = ${nwd(a, b)}"
+            }catch (e:Exception){
+                result.text = "Błąd danych"
+            }
 
-        result.text = "NWD(4,18) = ${nwd(4, 18)}"
+        }
+
     }
 }
