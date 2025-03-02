@@ -4,4 +4,5 @@
     <string name="lastname">Podaj nazwisko</string>
     <string name="podaj_imi">podaj imię</string>
     <string name="podaj_nazwisko">podaj nazwisko</string>
+    <string name="button">Zatwierdź dane</string>
 </resources>
