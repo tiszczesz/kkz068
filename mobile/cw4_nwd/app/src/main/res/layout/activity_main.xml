@@ -21,6 +21,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/opis"
         app:srcCompat="@drawable/euklides" />
 
     <LinearLayout
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/valueB" />
+            android:text="@string/valueA" />
 
         <EditText
             android:id="@+id/editA"
@@ -78,6 +79,6 @@
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FF5722"
+        android:textColor="@color/red"
         android:text="@string/tu_b_dzie_wynik" />
 </LinearLayout>

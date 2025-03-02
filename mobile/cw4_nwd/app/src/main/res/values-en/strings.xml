@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">cw4_nwd</string>
+    <string name="valueA">"a = "</string>
+    <string name="valueB">"b = "</string>
+    <string name="oblicz_nwd">Solve NWD</string>
+    <string name="najwi_kszy_wsp_lny_dzielnik">po angielsku</string>
+    <string name="tu_b_dzie_wynik">Result</string>
+</resources>

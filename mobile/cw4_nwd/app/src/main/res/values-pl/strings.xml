@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">cw4_nwd</string>
+    <string name="valueA">a=</string>
+    <string name="valueB">b=</string>
+    <string name="oblicz_nwd">polskie oblicz</string>
+    <string name="najwi_kszy_wsp_lny_dzielnik">polska nazwa</string>
+    <string name="tu_b_dzie_wynik">polski wynik</string>
+</resources>
