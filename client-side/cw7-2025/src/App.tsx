@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import First from './components/First'
 import MyText from './components/MyText'
+import PlayColors from './components/PlayColors'
+
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <MyText content="sdfsdf" limit={20} />
       <MyText content="sdfsdf sadsa dsad sad a dadsad asda da" />
       <MyText content="asda da" />
+      <hr />
+      <PlayColors />
     </>
   )
 }
