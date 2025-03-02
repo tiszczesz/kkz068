@@ -9,7 +9,7 @@ function App() {
       <h1 >Hello first</h1>
       <div className='temp'>DSfsfdsf sdfdsf </div>
       <First accent={true} myColor="#114512" text="udało się" mySize={10} />
-      <First myColor="green" text="nieudało się" mySize={20} />
+      <First myColor="Green" text="nieudało się" mySize={20} />
       <First myColor="blue" text="sdfsfsfę" mySize={30} />
       <First myColor="orange" text="--sad asdas---" accent={true} mySize={40} />
       <MyText content="sdfsdf" limit={20} />
