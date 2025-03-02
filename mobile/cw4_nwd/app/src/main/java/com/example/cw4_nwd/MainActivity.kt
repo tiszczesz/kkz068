@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val a = editA.text.toString().toInt()
                 val b = editB.text.toString().toInt()
-                result.text = "NWD(4,18) = ${nwd(a, b)}"
+                result.text = "NWD($a,$b) = ${nwd(a, b)}"
             }catch (e:Exception){
                 result.text = "Błąd danych"
             }

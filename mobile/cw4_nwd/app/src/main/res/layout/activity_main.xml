@@ -12,7 +12,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Największy wspólny dzielnik"
+        android:text="@string/najwi_kszy_wsp_lny_dzielnik"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold" />
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="@string/valueB" />
 
         <EditText
             android:id="@+id/editA"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="@string/valueB" />
 
         <EditText
             android:id="@+id/editB"
@@ -69,12 +69,15 @@
         android:id="@+id/btnRun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/oblicz_nwd"
         app:cornerRadius="0dp" />
 
     <TextView
         android:id="@+id/tvResult"
+        android:textSize="36sp"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textColor="#FF5722"
+        android:text="@string/tu_b_dzie_wynik" />
 </LinearLayout>
