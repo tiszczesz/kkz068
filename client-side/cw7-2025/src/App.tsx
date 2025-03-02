@@ -3,6 +3,8 @@ import './App.css'
 import First from './components/First'
 import MyText from './components/MyText'
 import PlayColors from './components/PlayColors'
+import StringsList from './components/StringsList'
+import { colors, countries } from './data/colors'
 
 
 function App() {
@@ -19,6 +21,9 @@ function App() {
       <MyText content="asda da" />
       <hr />
       <PlayColors />
+      <hr />
+      <StringsList title="Państwa" source={countries} listType="ul"/>
+      <StringsList title="Kolory" source={colors} listType="ol"/>
     </>
   )
 }
