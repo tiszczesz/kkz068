@@ -1,5 +1,4 @@
 package com.example.cw4_nwd
-
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -25,11 +24,17 @@ class MainActivity : AppCompatActivity() {
         val btnRun = findViewById<Button>(R.id.btnRun)
         btnRun.setOnClickListener {
             try {
+                if(editA.text.isEmpty() || editB.text.isEmpty()){
+                    result.text = "Brak danych"
+                    return@setOnClickListener
+                }
                 val a = editA.text.toString().toInt()
                 val b = editB.text.toString().toInt()
                 result.text = "NWD($a,$b) = ${nwd(a, b)}"
-            }catch (e:Exception){
+            }catch (e: NumberFormatException){
                 result.text = "Błąd danych"
+            }catch (  e:Exception  ){
+                result.text = "Błąd"
             }
 
         }
