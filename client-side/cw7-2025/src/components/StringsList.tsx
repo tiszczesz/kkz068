@@ -1,14 +1,17 @@
 import React from 'react'
 
 type Props = {
-    source:string[]
+    title: string
+    source: string[]
     listType: 'ul' | 'ol'
 }
 
-const StringsList = ({source,listType}: Props) => {
-  return (
-    <div>StringsList</div>
-  )
+const StringsList = ({ title, source, listType }: Props) => {
+    return (
+        <>
+            <h3>{title}</h3>
+        </>
+    )
 }
 
 export default StringsList
