@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">cw6</string>
+    <string name="firstname">Podaj imię</string>
+    <string name="lastname">Podaj nazwisko</string>
+    <string name="podaj_imi">podaj imię</string>
+    <string name="podaj_nazwisko">podaj nazwisko</string>
+</resources>
