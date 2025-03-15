@@ -14,4 +14,9 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+    @Test
+    fun Calculation_isCorrect(){
+        val actual = Calculation(100,1000.0,12)
+        assertEquals(2000.0, actual,0.001)
+    }
 }
