@@ -4,7 +4,11 @@ import './App.css'
 
 function App() {
   const [fontSize, setFontSize] = useState(16)
-  const [welcomeText, setWelcomeText] = useState(welcomeTexts[0])
+  const [welcomeText, setWelcomeText] =
+        useState(welcomeTexts[0]);
+  console.log("renderowanie komponentu App");
+  
+
   return (
     <>
      <h1 className='header'>Właściwości czcionki</h1>
