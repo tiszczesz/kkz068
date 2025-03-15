@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">cw7</string>
+    <string name="header">Obliczanie pożyczki</string>
+    <string name="btn_count">Oblicz</string>
+    <string name="procentowa">Stopa procentowa</string>
+    <string name="termin">Czas pożyczki</string>
+    <string name="kwota">Kwota pożyczki</string>
+</resources>
