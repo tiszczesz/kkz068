@@ -3,6 +3,7 @@ package com.example.cw7
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         //val etTermin = findViewById<EditText>(R.id.etTime)
+        bind.seekBar.min = 10
+        bind.tvProcent.text = "${bind.seekBar.progress}%"
         bind.seekBar.setOnSeekBarChangeListener(
             object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(
@@ -44,5 +47,20 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
+        bind.btnCount.setOnClickListener {
+            try {
+                val proc = bind.seekBar.progress
+                val amount = bind.etAmount.text.toString().toDouble()
+                val month = bind.etTime.text.toString().toInt()
+                val result = Calculation(proc, amount, month)
+                bind.tvResult.text =
+                    "Całkowita kwota pożyczki: $result zł";
+            }catch (ex:Exception){
+//                bind.tvResult.text = "Błąd"
+                Toast.makeText(this@MainActivity, "Błąd",
+                          Toast.LENGTH_SHORT).show();
+            }
+
+        }
     }
 }
