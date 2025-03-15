@@ -76,6 +76,38 @@
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
+        android:min="5"
+        android:max="50"
         android:layout_height="wrap_content"
         android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/tvProcent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5%"
+        android:textAlignment="center"
+        android:textColor="#104976"
+        android:textSize="@dimen/large_text"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#345643"
+        android:text="@string/btn_count"
+        android:textColor="@color/white"
+        android:textSize="@dimen/standard_text"
+        app:cornerRadius="5dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#087569"
+        android:textSize="@dimen/standard_text"
+        android:textStyle="bold" />
 </LinearLayout>
