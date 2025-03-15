@@ -1,0 +1,6 @@
+Ali|20|Tehran
+Magda|20|Warszawa
+Tomasz|44|Kraków
+Kasia|33|Gdańsk
+Kasia|33|Gdańsk
+Kasia|33|Gdańsk
