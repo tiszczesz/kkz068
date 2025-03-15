@@ -12,4 +12,6 @@ fun main() {
     val cars = listOf(car1, car2, car3,car4,car5)
     cars.forEach { println(it) }
     cars.forEach { it.printCar() }
+    val tt = Testowa()
+    println(tt.nn)
 }
