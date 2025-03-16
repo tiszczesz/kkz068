@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
         lvContacts.setOnItemClickListener { parent, view, position, id ->
             val contact = contacts[position]
             Toast.makeText(this, contact, Toast.LENGTH_SHORT).show()
