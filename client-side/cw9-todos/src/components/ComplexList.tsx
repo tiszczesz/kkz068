@@ -10,9 +10,20 @@ function getMaxId(users: User[]): number {
     })
     return max
 }
+function getIsLoggedUsres(users: User[]): number {
+    let isLogged = 0
+    for(let u of users){
+        if(u.isLogged){
+            isLogged++
+        }
+    }
+    return isLogged
+}
 
 
 const ComplexList = () => {
+    console.log("renderuję ComplexList");
+    
     const [usersList, setUsersList] = useState<User[]>(users)
     const maxId = getMaxId(usersList)
     function handleDelete(id: number): void {
@@ -22,7 +33,8 @@ const ComplexList = () => {
 
     return (
         <div className="container">
-            <h1>Lista użytkowników</h1>
+            <h1>Lista użytkowników ilość: {usersList.length}</h1>
+            <h3>Zalogowanych: {getIsLoggedUsres(usersList)}</h3>
             <div style={{
                 display: "flex",
                 gap: "10px",
