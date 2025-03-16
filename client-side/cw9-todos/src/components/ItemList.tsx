@@ -2,7 +2,8 @@
 import { User } from '../data/users'
 
 type Props = {
-    user: User
+    user: User,
+    onDelete: (id:number) => void
 }
 
 const ItemList = (props: Props) => {
@@ -11,7 +12,10 @@ const ItemList = (props: Props) => {
             <h3>nazwa użytkownika: {props.user.name}</h3>
             <h5>email: {props.user.email}</h5>
             <div>telefon: {props.user.phone}</div>
-            <button className='btn btn-danger'>Usuń</button>
+            <button
+             className='btn btn-danger'
+                onClick={()=>props.onDelete(props.user.id)}
+             >Usuń</button>
     </div>
   )
 }
