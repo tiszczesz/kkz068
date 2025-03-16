@@ -1,10 +1,20 @@
+import { useState } from "react"
+import { users,type User } from "../data/users"
+import ItemList from "./ItemList"
 
 
-type Props = {}
 
-const ComplexList = (props: Props) => {
+const ComplexList = () => {
+    const [usersList, setUsersList] = useState<User[]>(users)
   return (
-    <div>ComplexList</div>
+    <div className="container">
+        <h1>Lista użytkowników</h1>
+        <div style={{display:"flex",gap:"10px"}}>
+            {users.map((u,index)=>(
+                <ItemList key={u.id} user={u}/>
+            ))}
+        </div>
+    </div>
   )
 }
 
