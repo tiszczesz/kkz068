@@ -34,7 +34,7 @@
         android:background="@color/white"
         android:orientation="horizontal">
         <ImageView
-            android:id="@+id/dice1"
+            android:id="@+id/k1"
 
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -42,28 +42,28 @@
             android:src="@drawable/question"
             android:layout_height="80dp"/>
         <ImageView
-            android:id="@+id/dice2"
+            android:id="@+id/k2"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:src="@drawable/question"
             android:layout_margin="5dp"
             android:layout_height="80dp"/>
         <ImageView
-            android:id="@+id/dice3"
+            android:id="@+id/k3"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:src="@drawable/question"
             android:layout_margin="5dp"
             android:layout_height="80dp"/>
         <ImageView
-            android:id="@+id/dice4"
+            android:id="@+id/k4"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:src="@drawable/question"
             android:layout_margin="5dp"
             android:layout_height="80dp"/>
         <ImageView
-            android:id="@+id/dice5"
+            android:id="@+id/k5"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:src="@drawable/question"
