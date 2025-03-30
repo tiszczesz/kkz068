@@ -15,6 +15,7 @@ function getGender(info: string): string {
 }
 function MyForm19() {
     const [formData, setFormData] = useState<UserType | null>(null);
+    const [usersList, setUsersList] = useState<UserType[]>([]);
     function handleAction(e: FormData): void | Promise<void> {
         console.log(e);
         const firstname = e.get("firstname") as string;
@@ -54,9 +55,8 @@ function MyForm19() {
                 </button>
             </form>
             <hr />
-            <div>
-                {formData && <p>Imię: {formData?.firstname} Nazwisko: {formData?.lastname}
-                    płeć:{formData?.gender} Akceptacja: {formData?.accept}</p>}
+            <div style={{}}>
+                
             </div>
         </>
     )
