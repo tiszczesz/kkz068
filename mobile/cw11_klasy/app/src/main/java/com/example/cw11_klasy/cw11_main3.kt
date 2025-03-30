@@ -7,6 +7,23 @@ fun main() {
     println(w1)
     val t1 = Teacher("Jan", "Kowalski", "Matematyka")
     println(t1)
+    val persons = mutableListOf<Person>(s1, w1, t1)
+    persons.add(Student("Adam", "Nowak", 12345))
+    persons.add(Teacher("Teresa", "Nowacka", "Geografia"))
+    for (p in persons) {
+        println(p)
+        if (p is IWorkered) { // sprawdzamy czy p implementuje interfejs IWorkered
+            println(p.work())
+        }else{
+            println("Nie pracuje")
+        }
+        //czy to student?
+        if (p is Student) { // sprawdzamy czy p jest Studentem
+            println("To student")
+        } else {
+            println("Nie student")
+        }
+    }
 }
 
 //open class Person(protected var firstname: String, protected var lastname: String) {
