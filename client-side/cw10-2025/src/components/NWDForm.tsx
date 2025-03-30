@@ -52,7 +52,8 @@ const NWDForm = () => {
 export default NWDForm
 
 function nwdRec(a: number, b: number): any {
-    throw new Error("Function not implemented.");
+    if (b === 0) return a;
+    return nwdRec(b, a % b);
 }
 function nwdIter(a: number, b: number): any {
     throw new Error("Function not implemented.");
