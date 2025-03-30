@@ -1,0 +1,5 @@
+Jan|Kowalski|25
+Anna|Nowak|30
+Piotr|Zalewski|28
+Adam|Zalewski|34
+Monika|Zalewska|22
