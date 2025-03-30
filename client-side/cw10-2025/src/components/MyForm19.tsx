@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { UserType } from "../data/types";
+import MyUser from "./MyUser";
 
 function getGender(info: string): string {
     switch (info) {
@@ -18,12 +19,14 @@ function MyForm19() {
     const [usersList, setUsersList] = useState<UserType[]>([]);
     function handleAction(e: FormData): void | Promise<void> {
         console.log(e);
-        setFormData({
+        const user = {
             firstname: e.get("firstname") as string,
             lastname: e.get("lastname") as string,
             gender: getGender(e.get("gender") as string),
-            accept: e.get("accept") as string === "on" ? true : false;
-        });
+            accept: e.get("accept") as string === "on" ? true : false
+        }
+        setFormData(user);
+        setUsersList([...usersList, user]);
     }
 
 
@@ -54,9 +57,15 @@ function MyForm19() {
                 </button>
             </form>
             <hr />
-            <div style={{}}>
-
-            </div>
+            {usersList.length > 0 && <div style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px"
+            }}>
+                {usersList.map((elem, i) => (
+                    <MyUser key={i} user={elem} />
+                ))}
+            </div>}
         </>
     )
 }
