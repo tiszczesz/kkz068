@@ -18,12 +18,11 @@ function MyForm19() {
     const [usersList, setUsersList] = useState<UserType[]>([]);
     function handleAction(e: FormData): void | Promise<void> {
         console.log(e);
-        const firstname = e.get("firstname") as string;
-        const lastname = e.get("lastname") as string;
-        const gender = getGender(e.get("gender") as string);
-        const accept = e.get("accept") as string === "on" ? true : false;
         setFormData({
-            firstname, lastname, gender, accept
+            firstname: e.get("firstname") as string,
+            lastname: e.get("lastname") as string,
+            gender: getGender(e.get("gender") as string),
+            accept: e.get("accept") as string === "on" ? true : false;
         });
     }
 
@@ -56,7 +55,7 @@ function MyForm19() {
             </form>
             <hr />
             <div style={{}}>
-                
+
             </div>
         </>
     )
