@@ -1,0 +1,64 @@
+import { useState } from "react";
+import { UserType } from "../data/types";
+
+function getGender(info: string): string {
+    switch (info) {
+        case "m":
+            return "Mężczyzna";
+        case "k":
+            return "Kobieta";
+        case "i":
+            return "Inna";
+        default:
+            return "Nieznana płeć";
+    }
+}
+function MyForm19() {
+    const [formData, setFormData] = useState<UserType | null>(null);
+    function handleAction(e: FormData): void | Promise<void> {
+        console.log(e);
+        const firstname = e.get("firstname") as string;
+        const lastname = e.get("lastname") as string;
+        const gender = getGender(e.get("gender") as string);
+        const accept = e.get("accept") as string === "on" ? true : false;
+        setFormData({
+            firstname, lastname, gender, accept
+        });
+    }
+
+
+    return (
+        <>
+            <form action={handleAction}>
+                <div className="row m-2">
+                    <input placeholder="podaj imię" name="firstname"
+                        type="text" className="col-6" />
+                </div>
+                <div className="row m-2">
+                    <input placeholder="podaj nazwisko"
+                        name="lastname"
+                        type="text" className="col-6" />
+                </div>
+                <div className="row m-2">
+                    <select className="col-6" name="gender">
+                        <option value="m">Mężczyzna</option>
+                        <option value="k">Kobieta</option>
+                        <option value="i">Inna</option>
+                    </select>
+                </div>
+                <div className="row m-2">
+                    <input className="col-1" type="checkbox" name="accept" />    <label className="col-5">Akceptuję regulamin</label>
+                </div>
+                <button className="btn btn-secondary col-6">
+                    Zatwierdź
+                </button>
+            </form>
+            <hr />
+            <div>
+                {formData && <p>Imię: {formData?.firstname} Nazwisko: {formData?.lastname}
+                    płeć:{formData?.gender} Akceptacja: {formData?.accept}</p>}
+            </div>
+        </>
+    )
+}
+export default MyForm19;
