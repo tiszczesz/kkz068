@@ -33,6 +33,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cw2_compose.ui.theme.Cw2_composeTheme
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +55,7 @@ fun MyForm() {
     var firstname by remember { mutableStateOf("") }
     var lastname by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
-    var listUsers = remember { mutableStateListOf<String>() }
+    var listUsers = remember { mutableStateListOf<User>() }
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -98,7 +101,7 @@ fun MyForm() {
                 .background(Color(0xFF6200EE)),
             onClick = {
                 if (firstname.isNotEmpty() && lastname.isNotEmpty() && email.isNotEmpty()) {
-                    listUsers.add("$firstname $lastname email: $email")
+                    listUsers.add(User(firstname, lastname, email))
                     firstname = ""
                     lastname = ""
                     email = ""
@@ -113,7 +116,25 @@ fun MyForm() {
                 .background(Color(0xFFEFF3F3)),
         ) {
             items(listUsers) { item ->
-                Text(text = item, modifier = Modifier.padding(8.dp))
+                Column() {
+                    Text(
+                        text = item.firstname,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    Text(
+                        text = item.lastname,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    Text(
+                        text = item.email,
+                        fontStyle = FontStyle.Italic,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    HorizontalDivider(thickness = 2.dp, color = Color(0xFF009688))
+                }
+
             }
         }
     }
