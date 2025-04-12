@@ -22,6 +22,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -99,13 +100,22 @@ fun RunDevicesView(modifier: Modifier = Modifier) {
                     fontSize = 16.sp
                 )
                 TextField(
+
                     runNumber,
                     onValueChange = {
                         runNumber = it
                     },
                     label = {
                         Text("Podaj nr prania 1..12")
-                    }
+                    },
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Color(0xFF87CEEB),
+                        unfocusedContainerColor = Color(0xFF87CEEB),
+                        disabledContainerColor = Color(0xFF87CEEB),
+                        errorContainerColor = Color.Red,
+                    ),
+
+
 
                 )
                 Button(
