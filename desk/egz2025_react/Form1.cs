@@ -7,6 +7,9 @@ namespace egz2025_react
         {
             InitializeComponent();
             CreateDynamicPanels(flowLayoutPanel1);
+            checkBoxAnimals.Checked = true;
+            checkBoxFlower.Checked = true;
+            checkBoxCars.Checked = true;
         }
         private void CreateDynamicPanels(FlowLayoutPanel flowLayoutPanel1)
         {
@@ -92,11 +95,49 @@ namespace egz2025_react
             }
         }
 
-        private void checkBoxFlower_MouseClick(object sender, MouseEventArgs e)
+        private void checkBoxFlower_CheckedChanged(object sender, EventArgs e)
         {
-            var checkBox = sender as CheckBox;
-            checkBox.Checked = !checkBox.Checked;
+           FilterdImages();
+        }
 
+        private void checkBoxAnimals_CheckedChanged(object sender, EventArgs e)
+        {
+           
+           FilterdImages();
+        }
+
+        private void checkBoxCars_CheckedChanged(object sender, EventArgs e)
+        {
+           FilterdImages();
+        }
+        private void FilterdImages() {
+            foreach (var elem in imageDataList)
+            {
+                if (elem.Category == 1)
+                {
+                    var panel = flowLayoutPanel1.Controls.Find($"Panel{elem.Id}", true).FirstOrDefault();
+                    if (panel != null)
+                    {
+                        panel.Visible = checkBoxFlower.Checked;
+                    }
+                }
+                if (elem.Category == 2)
+                {
+                    var panel = flowLayoutPanel1.Controls.Find($"Panel{elem.Id}", true).FirstOrDefault();
+                    if (panel != null)
+                    {
+                        panel.Visible = checkBoxAnimals.Checked;
+                    }
+                }
+                if (elem.Category == 3)
+                {
+                    var panel = flowLayoutPanel1.Controls.Find($"Panel{elem.Id}", true).FirstOrDefault();
+                    if (panel != null)
+                    {
+                        panel.Visible = checkBoxCars.Checked;
+                    }
+                }
+            }
         }
     }
 

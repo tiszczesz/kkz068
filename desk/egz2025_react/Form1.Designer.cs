@@ -67,7 +67,7 @@
             checkBoxCars.TabIndex = 2;
             checkBoxCars.Text = "Samochody";
             checkBoxCars.UseVisualStyleBackColor = true;
-            checkBoxCars.MouseClick += checkBoxFlower_MouseClick;
+            checkBoxCars.CheckedChanged += checkBoxCars_CheckedChanged;
             // 
             // checkBoxAnimals
             // 
@@ -80,7 +80,7 @@
             checkBoxAnimals.TabIndex = 1;
             checkBoxAnimals.Text = "Zwierzęta";
             checkBoxAnimals.UseVisualStyleBackColor = true;
-            checkBoxAnimals.MouseClick += checkBoxFlower_MouseClick;
+            checkBoxAnimals.CheckedChanged += checkBoxAnimals_CheckedChanged;
             // 
             // checkBoxFlower
             // 
@@ -93,7 +93,7 @@
             checkBoxFlower.TabIndex = 0;
             checkBoxFlower.Text = "Kwiaty";
             checkBoxFlower.UseVisualStyleBackColor = true;
-            checkBoxFlower.MouseClick += checkBoxFlower_MouseClick;
+            checkBoxFlower.CheckedChanged += checkBoxFlower_CheckedChanged;
             // 
             // Form1
             // 
