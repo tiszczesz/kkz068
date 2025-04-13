@@ -11,7 +11,7 @@ function App() {
 
   console.log(flowersChecked, animalChecked, carsChecked);
 
-  
+
   function handleClick(id: number): void {
     const newList = itemsList.map((item) => (
       item.id === id ? { ...item, downloads: item.downloads + 1 } : item
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <h1>Kategorie zdjęć</h1>
-  
+
       <div style={{ display: "flex", gap: "10px" }}>
         <div className="form-check form-switch">
           <input onChange={() => setFlowersChecked(!flowersChecked)} className="form-check-input"
@@ -50,7 +50,10 @@ function App() {
       <div className='list'>
         {
           itemsList.map((item, index) => (
-            <section key={index}>
+            ((flowersChecked && item.category == 1)
+              || (animalChecked && item.category == 2)
+              || (carsChecked && item.category == 3)
+            ) && <section key={index}>
               <img src={`/assets/${item.filename}`} alt={item.alt} />
               <h4>Pobrań: {item.downloads}</h4>
               <button
