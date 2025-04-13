@@ -18,13 +18,14 @@ function App() {
           htmlFor='flowers'>Kwiaty</label>
       </div>
       <div className="form-check form-switch">
-        <input className="form-check-input"
+        <input onClick={()=>setAnimalChecked(!animalChecked)} className="form-check-input"
           type="checkbox" id="animals" checked={animalChecked}/>
         <label className="form-check-label"
           htmlFor='animals'>Zwierzęta</label>
       </div>
       <div className="form-check form-switch">
         <input className="form-check-input"
+          onClick={()=>setCarsChecked(!carsChecked)}
           type="checkbox" id="cars"  checked={carsChecked}/>
         <label className="form-check-label"
           htmlFor='cars'>Samochody</label>
